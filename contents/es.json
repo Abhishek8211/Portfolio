@@ -1,0 +1,121 @@
+{
+    "about": {
+        "intro": "Soy un *Desarrollador Full Stack* apasionado por crear aplicaciones web **modernas**, **escalables** y **de alto rendimiento**.",
+        "description": "Disfruto **aprendiendo nuevas tecnologías** y convirtiendo ideas en aplicaciones reales. Principalmente desarrollo *aplicaciones web* y mejoro continuamente mis habilidades en **desarrollo backend**, **ingeniería frontend** e **inteligencia artificial**. Creo en escribir código limpio, mantenible y eficiente que ofrezca experiencias de usuario significativas.",
+        "full": "Hola, soy **Abhishek Kumar**, estudiante de Ciencias de la Computación y Desarrollador Full Stack de la India. Durante los últimos años he aprendido activamente desarrollo de software creando proyectos, explorando nuevas tecnologías y mejorando continuamente mis habilidades.\n\nTrabajo principalmente en desarrollo web moderno utilizando tecnologías como *React*, *Next.js*, *TypeScript*, *Node.js*, *Express.js*, *MongoDB*, *Tailwind CSS* y *Prisma*. También disfruto trabajando con bases de datos, APIs REST, sistemas de autenticación y aplicaciones en la nube.\n\nAdemás del desarrollo web, me interesan profundamente la *Inteligencia Artificial*, el *Diseño de Sistemas* y la creación de arquitecturas backend escalables. Me gusta experimentar con nuevos frameworks y herramientas porque cada proyecto me enseña algo valioso.\n\nCreo firmemente que un gran software debe ser **limpio**, **mantenible**, **eficiente** y **centrado en el usuario**. Cada proyecto que desarrollo es una oportunidad para resolver problemas reales mientras mejoro mis habilidades técnicas y de resolución de problemas.\n\nMi objetivo a largo plazo es convertirme en un Ingeniero de Software altamente capacitado, capaz de diseñar sistemas escalables, contribuir a productos de alto impacto y seguir aprendiendo tecnologías emergentes."
+    },
+    "manifesto": [
+        "APRENDIZAJE CONTINUO",
+        "CONSTRUIR CON PROPÓSITO",
+        "ESCRIBIR CÓDIGO LIMPIO",
+        "RESOLVER PROBLEMAS REALES",
+        "EL RENDIMIENTO ES LO PRIMERO",
+        "NUNCA DEJAR DE MEJORAR"
+    ],
+    "projects": [
+        {
+            "id": "1",
+            "title": "Energy Calculator Chatbot",
+            "category": "Asistente de IA",
+            "year": "2026",
+            "description": "AI Energy Calculator es una aplicación web inteligente que ayuda a los usuarios a estimar el consumo de energía de sus hogares simplemente proporcionando información sobre sus electrodomésticos. Calcula el consumo energético de forma rápida, precisa y mediante una interfaz conversacional intuitiva.\n\nImpulsada por tecnologías web modernas y un chatbot basado en IA, analiza información como la potencia, las horas de uso diarias y la cantidad de cada aparato para estimar el consumo eléctrico de usuarios de diferentes países. La aplicación ofrece información clara sobre el uso de energía, ayudando a comprender mejor las necesidades eléctricas y a tomar decisiones para optimizar el consumo.",
+            "image": "/projects/energychatbot.png",
+            "demo": "https://chat-bot-psi-nine.vercel.app/",
+            "repo": "https://github.com/Abhishek8211/Energy-Calculator-ChatBot.git",
+            "stack": [
+                "OpenRouter",
+                "TypeScript",
+                "Next.js",
+                "TailwindCSS"
+            ]
+        },
+        {
+            "id": "2",
+            "title": "WordGame",
+            "category": "Juego",
+            "year": "2025",
+            "description": "WordGame es un juego multijugador en tiempo real donde los jugadores compiten colocando estratégicamente letras en una cuadrícula compartida para formar palabras válidas en inglés. Cada palabra correcta otorga puntos, fomentando la creatividad mientras el tablero cambia constantemente.\n\nDesarrollado con tecnologías web modernas y comunicación en tiempo real, el juego ofrece una experiencia fluida con puntuaciones en vivo, turnos temporizados y una jugabilidad interactiva. Combinando estrategia, vocabulario y rapidez de decisión, WordGame brinda una experiencia divertida y competitiva para jugadores de todos los niveles.",
+            "image": "/projects/wordgame.png",
+            "repo": "https://github.com/Abhishek8211/WordGame.git",
+            "stack": [
+                "React",
+                "Node.js",
+                "Tailwind CSS",
+                "Socket.io",
+                "Vite"
+            ]
+        },
+        {
+            "id": "3",
+            "title": "HandwritingAI",
+            "category": "Aplicación Web",
+            "year": "2025",
+            "description": "HandwritingAI es una aplicación web impulsada por IA que transforma texto escrito en notas manuscritas realistas en solo unos segundos. Diseñada para estudiantes, profesores y profesionales, genera escritura natural con estilos personalizables, distintos tipos de papel y opciones de formato para crear documentos manuscritos auténticos sin esfuerzo.\n\nDesarrollada con tecnologías modernas de IA y una interfaz intuitiva, ofrece más de 13 estilos de escritura, múltiples tipos de papel, niveles ajustables de imperfección, etiquetado de diagramas y exportación en PDF y PNG de alta calidad. Proporciona una solución rápida, flexible y práctica para crear tareas, apuntes y documentos manuscritos sin escribirlos manualmente.",
+            "image": "/projects/hand.png",
+            "repo": "https://github.com/Abhishek8211/HandwrittenAI.git",
+            "stack": [
+                "React",
+                "TailwindCSS",
+                "Vite"
+            ]
+        }
+    ],
+    "roadmap": [
+        {
+            "id": "01",
+            "year": "2024",
+            "description": "Mi camino en la programación comenzó aprendiendo los fundamentos de la programación, la resolución de problemas y las tecnologías web básicas. Durante esta etapa construí una sólida base en lógica de programación y conceptos de desarrollo de software.",
+            "stack": [
+                "Python",
+                "HTML",
+                "CSS"
+            ]
+        },
+        {
+            "id": "02",
+            "year": "2024",
+            "description": "Comencé a crear sitios web adaptables utilizando HTML, CSS y JavaScript mientras aprendía prácticas modernas de desarrollo frontend. También exploré Git y GitHub y completé varios proyectos personales.",
+            "stack": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Git"
+            ]
+        },
+        {
+            "id": "03",
+            "year": "2025",
+            "description": "Me adentré en el desarrollo con React y comencé a crear aplicaciones web dinámicas. Durante este período también aprendí desarrollo backend con Node.js, Express.js, MongoDB y APIs REST, lo que me permitió desarrollar aplicaciones Full Stack completas.",
+            "stack": [
+                "React",
+                "Node.js",
+                "Express.js",
+                "MongoDB"
+            ]
+        },
+        {
+            "id": "04",
+            "year": "2025",
+            "description": "Amplié mis habilidades trabajando con Next.js, TypeScript, Tailwind CSS, Prisma y PostgreSQL. Desarrollé varios proyectos Full Stack centrándome en autenticación, integración de APIs, gestión de bases de datos y experiencias de usuario responsivas.",
+            "stack": [
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "PostgreSQL"
+            ]
+        },
+        {
+            "id": "05",
+            "year": "2026",
+            "description": "Continúo mejorando como Desarrollador Full Stack creando aplicaciones listas para producción y explorando Inteligencia Artificial, tecnologías en la nube y diseño de sistemas escalables. Mi objetivo es desarrollar software de impacto mientras sigo aprendiendo nuevas tecnologías.",
+            "stack": [
+                "Next.js",
+                "TypeScript",
+                "Devops",
+                "AI",
+                "Cloud",
+                "System Design"
+            ]
+        }
+    ]
+}

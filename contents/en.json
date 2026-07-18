@@ -1,0 +1,121 @@
+{
+    "about": {
+        "intro": "I'm a *Full Stack Developer* passionate about building **modern**, **scalable**, and **high-performance** web applications.",
+        "description": "I'm someone who enjoys **learning new technologies** and turning ideas into real-world applications. I primarily develop *web applications* and continuously improve my skills in **backend development**, **frontend engineering**, and **artificial intelligence**. I believe in writing clean, maintainable, and efficient code that creates meaningful user experiences.",
+        "full": "Hi, I'm **Abhishek Kumar**, a Computer Science student and Full Stack Developer from India. Over the past few years, I have been actively learning software development by building projects, exploring new technologies, and continuously improving my skills.\n\nI primarily work on modern web development using technologies like *React*, *Next.js*, *TypeScript*, *Node.js*, *Express.js*, *MongoDB*, *Tailwind CSS*, and *Prisma*. I also enjoy working with databases, REST APIs, authentication systems, and cloud-based applications.\n\nApart from web development, I'm deeply interested in *Artificial Intelligence*, *System Design*, and building scalable backend architectures. I enjoy experimenting with new frameworks and tools because every project teaches me something valuable.\n\nI strongly believe that great software should be **clean**, **maintainable**, **efficient**, and **user-focused**. Every project I build is an opportunity to solve real-world problems while improving my technical and problem-solving skills.\n\nMy long-term goal is to become a highly skilled Software Engineer capable of designing scalable systems, contributing to impactful products, and continuously learning emerging technologies."
+    },
+    "manifesto": [
+        "CONTINUOUS LEARNING",
+        "BUILD WITH PURPOSE",
+        "WRITE CLEAN CODE",
+        "SOLVE REAL PROBLEMS",
+        "PERFORMANCE FIRST",
+        "NEVER STOP IMPROVING"
+  ],
+    "projects": [
+        {
+            "id": "1",
+            "title": "Energy Calculator Chatbot",
+            "category": "AI Assistant",
+            "year": "2026",
+            "description": "AI Energy Calculator is an intelligent web application that helps users estimate household energy consumption by simply providing details about their electrical appliances. It calculates energy usage quickly, accurately, and through an intuitive conversational interface.\n\nPowered by modern web technologies and an AI-driven chatbot, it analyzes appliance information such as power rating, daily usage hours, and quantity to estimate electricity consumption for users in different countries. The application provides clear insights into energy usage, helping users better understand their electricity needs and make informed decisions to optimize consumption.",
+            "image": "/projects/energychatbot.png",
+            "demo": "https://chat-bot-psi-nine.vercel.app/",
+            "repo": "https://github.com/Abhishek8211/Energy-Calculator-ChatBot.git",
+            "stack": [
+                "OpenRouter",
+                "TypeScript",
+                "Next.js",
+                "TailwindCSS"
+            ]
+        },
+        {
+            "id": "2",
+            "title": "WordGame",
+            "category": "Game",
+            "year": "2025",
+            "description": "WordGame is a real-time multiplayer word-building game where players compete by strategically placing letters on a shared grid to create valid English words. Every correctly formed word earns points, encouraging players to think creatively while adapting to an ever-changing board.\n\nBuilt with modern web technologies and real-time communication, the game delivers a smooth multiplayer experience with live score updates, timed turns, and interactive gameplay. Combining strategy, vocabulary, and quick decision-making, WordGame offers a fun and competitive experience for players of all skill levels.",
+            "image": "/projects/wordgame.png",
+            "repo": "https://github.com/Abhishek8211/WordGame.git",
+            "stack": [
+                "React",
+                "Node.js",
+                "Tailwind CSS",
+                "Socket.io",
+                "Vite"
+            ]
+        },
+        {
+            "id": "3",
+            "title": "HandwritingAI",
+            "category": "Web Application",
+            "year": "2025",
+            "description": "HandwritingAI is an AI-powered web application that transforms typed text into realistic handwritten notes in just a few seconds. Designed for students, educators, and professionals, it generates natural-looking handwriting with customizable styles, paper templates, and formatting options to create authentic handwritten documents effortlessly.\n\nBuilt with modern AI technologies and an intuitive user interface, the application offers over 13 handwriting styles, multiple paper types, adjustable handwriting messiness, diagram labeling, and high-quality PDF and PNG export. It provides a fast, flexible, and practical solution for creating realistic handwritten assignments, notes, and documents without writing them manually.",
+            "image": "/projects/hand.png",
+            "repo": "https://github.com/Abhishek8211/HandwrittenAI.git",
+            "stack": [
+                "React",
+                "TailwindCSS",
+                "Vite"
+            ]
+        }
+    ],
+    "roadmap": [
+        {
+            "id": "01",
+            "year": "2024",
+            "description": "My journey into programming began with learning the fundamentals of programming, problem-solving, and basic web technologies. During this time, I built a strong foundation in programming logic and software development concepts.",
+            "stack": [
+                "Python",
+                "HTML",
+                "CSS"
+            ]
+        },
+        {
+            "id": "02",
+            "year": "2024",
+            "description": "I started building responsive websites using HTML, CSS, and JavaScript while learning modern frontend development practices. I also explored version control with Git and GitHub and completed several personal projects.",
+            "stack": [
+                "HTML",
+                "CSS",
+                "JavaScript",
+                "Git"
+            ]
+        },
+        {
+            "id": "03",
+            "year": "2025",
+            "description": "I moved into React development and began building dynamic web applications. During this period, I also learned backend development using Node.js, Express.js, MongoDB, and REST APIs, allowing me to create complete full-stack applications.",
+            "stack": [
+                "React",
+                "Node.js",
+                "Express.js",
+                "MongoDB"
+            ]
+        },
+        {
+            "id": "04",
+            "year": "2025",
+            "description": "I expanded my skills by working with Next.js, TypeScript, Tailwind CSS, Prisma, and PostgreSQL. I developed several full-stack projects while focusing on authentication, API integration, database management, and responsive user experiences.",
+            "stack": [
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "PostgreSQL"
+            ]
+        },
+        {
+            "id": "05",
+            "year": "2026",
+            "description": "I continue to improve as a Full Stack Developer by building production-ready applications, exploring Artificial Intelligence, cloud technologies, and scalable system design. My focus is on creating impactful software while continuously learning new technologies.",
+            "stack": [
+                "Next.js",
+                "TypeScript",
+                "Devops",
+                "AI",
+                "Cloud",
+                "System Design"
+            ]
+        }
+    ]
+}

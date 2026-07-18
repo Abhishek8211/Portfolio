@@ -1,0 +1,44 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "À propos",
+        "stack": "Stack",
+        "projects": "Projets",
+        "roadmap": "Parcours",
+        "contact": "Contact"
+    },
+    "title": {
+        "about": "À propos",
+        "stack": "Stack",
+        "projects": "Projets",
+        "roadmap": "Feuille de route",
+        "contact": "Contact"
+    },
+    "scrollDown": "Faire défiler",
+    "contactMe": "Me contacter",
+    "exploreProjects": "Explorer les projets",
+    "readFullVersion": "Lire la version complète",
+    "frontendStack": "Technologies Frontend",
+    "backendStack": "Technologies Backend",
+    "databaseStack": "Bases de données & ORMs",
+    "toolsStack": "Outils & Infrastructure",
+    "projectsIntro": "Une collection d'*expériences*, de *produits* et d'*artefacts numériques* forgés dans le **vide**.",
+    "projectsScrollText": "Faites défiler pour explorer",
+    "projectsEndText": "Fin",
+    "roadmapDescription": "Un parcours où je partage les expériences acquises tout au long de mon aventure dans le logiciel et les technologies que j'ai apprises.",
+    "contactIntroText": "Que l'on parte de zéro pour donner vie à un projet ou que l'on pousse un système existant encore plus loin.",
+    "sendEmail": "Envoyer un e-mail",
+    "directLine": "Ligne directe",
+    "allRightsReserved": "Tous droits réservés.",
+    "contactModalDescription": "Envoyez-moi un message et je vous répondrai dans les plus brefs délais.",
+    "projectDetails": "Détails sur",
+    "aboutProject": "À propos du projet",
+    "technologies": "Technologies",
+    "liveDemo": "Démo en direct",
+    "sourceCode": "Code source",
+    "notFound": {
+        "title": "Page non trouvée",
+        "description": "La page que vous recherchez a peut-être été supprimée, a changé de nom ou est temporairement indisponible.",
+        "goHome": "Retour à l'accueil"
+    }
+}

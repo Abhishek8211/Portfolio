@@ -1,0 +1,44 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "stack": "Stack",
+        "projects": "Proyectos",
+        "roadmap": "Ruta",
+        "contact": "Contacto"
+    },
+    "title": {
+        "about": "Sobre mí",
+        "stack": "Stack",
+        "projects": "Proyectos",
+        "roadmap": "Ruta de aprendizaje",
+        "contact": "Contacto"
+    },
+    "scrollDown": "Deslizar",
+    "contactMe": "Contáctame",
+    "exploreProjects": "Explorar proyectos",
+    "readFullVersion": "Leer versión completa",
+    "frontendStack": "Tecnologías Frontend",
+    "backendStack": "Tecnologías Backend",
+    "databaseStack": "Bases de datos y ORMs",
+    "toolsStack": "Herramientas e Infraestructura",
+    "projectsIntro": "Una colección de *experimentos*, *productos* y *artefactos digitales* forjados en el **vacío**.",
+    "projectsScrollText": "Desliza para explorar",
+    "projectsEndText": "Fin",
+    "roadmapDescription": "Un mapa donde comparto las experiencias que he adquirido a lo largo de mi viaje en el software y las tecnologías que he aprendido.",
+    "contactIntroText": "Ya sea que empecemos desde cero para dar vida a un proyecto o llevemos un sistema existente más allá.",
+    "sendEmail": "Enviar un correo",
+    "directLine": "Línea directa",
+    "allRightsReserved": "Todos los derechos reservados.",
+    "contactModalDescription": "Envíame un mensaje y me pondré en contacto contigo lo antes posible.",
+    "projectDetails": "Detalles sobre",
+    "aboutProject": "Sobre el proyecto",
+    "technologies": "Tecnologías",
+    "liveDemo": "Demostración en vivo",
+    "sourceCode": "Código fuente",
+    "notFound": {
+        "title": "Página no encontrada",
+        "description": "Es posible que la página que estás buscando haya sido eliminada, haya cambiado de nombre o no esté disponible temporalmente.",
+        "goHome": "Volver al inicio"
+    }
+}

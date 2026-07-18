@@ -1,0 +1,141 @@
+{
+  "contact": {
+    "location": "Bihar, India",
+    "email": "abhishekkrbgp8211@gmail.com",
+    "phone": "+91 8863923193"
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/Abhishek8211"
+    },
+    {
+      "label": "Discord",
+      "href": ""
+    },
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com/ig.abhishek__1/"
+    },
+    {
+      "label": "Linkedin",
+      "href": "https://www.linkedin.com/in/abhishek-kumar8211/"
+    }
+  ],
+  "stack": {
+    "frontend": [
+      {
+        "name": "React",
+        "icon": "/stack/react.svg",
+        "featured": true
+      },
+      {
+        "name": "Next.js",
+        "icon": "/stack/nextjs.svg",
+        "featured": true
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "/stack/tailwindcss.svg",
+        "featured": true
+      },
+      {
+        "name": "Bootstrap",
+        "icon": "/stack/bootstrap.svg"
+      },
+      {
+        "name": "Framer Motion",
+        "icon": "/stack/framermotion.svg"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "/stack/typescript.svg"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "/stack/javascript.svg"
+      },
+      {
+        "name": "HTML5",
+        "icon": "/stack/html5.svg"
+      },
+      {
+        "name": "CSS3",
+        "icon": "/stack/css3.svg"
+      }
+    ],
+    "backend": [
+      {
+        "name": "Node.js",
+        "icon": "/stack/nodejs.svg"
+      },
+      {
+        "name": "PHP",
+        "icon": "/stack/php.svg"
+      },
+      {
+        "name": "Laravel",
+        "icon": "/stack/laravel.svg",
+        "featured": true
+      },
+      {
+        "name": "ASP.NET",
+        "icon": "/stack/aspnet.svg"
+      },
+      {
+        "name": "Rust",
+        "icon": "/stack/rust.svg"
+      },
+      {
+        "name": "C#",
+        "icon": "/stack/csharp.svg"
+      },
+      {
+        "name": "Python",
+        "icon": "/stack/python.svg"
+      },
+      {
+        "name": "Discord.js",
+        "icon": "/stack/discordjs.svg"
+      }
+    ],
+    "database": [
+      {
+        "name": "PostgreSQL",
+        "icon": "/stack/postgresql.svg",
+        "featured": true
+      },
+      {
+        "name": "MySQL",
+        "icon": "/stack/mysql.svg",
+        "featured": true
+      },
+      {
+        "name": "MongoDB",
+        "icon": "/stack/mongodb.svg"
+      },
+      {
+        "name": "Prisma",
+        "icon": "/stack/prisma.svg"
+      },
+      {
+        "name": "Neon",
+        "icon": "/stack/neon.png"
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git",
+        "icon": "/stack/git.svg"
+      },
+      {
+        "name": "Vercel",
+        "icon": "/stack/vercel.svg"
+      },
+      {
+        "name": "Tauri",
+        "icon": "/stack/tauri.svg"
+      }
+    ]
+  }
+}
