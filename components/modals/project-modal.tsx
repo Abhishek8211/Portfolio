@@ -8,7 +8,7 @@ import {
 
 import { useLenisModal } from "@/hooks/use-lenis-modal";
 import { useLanguage } from "@/providers/language-provider";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import type { ProjectItem } from "@/types/project";
 import { ShineButton } from "@/components/ui/shine-button";
@@ -55,7 +55,8 @@ export function ProjectModal({ open, onOpenChange, project }: ProjectModalProps)
                                 src={project.image}
                                 alt={project.title}
                                 fill
-                                className="object-cover rounded-lg"
+                                sizes="(max-width: 640px) 100vw, 800px"
+                                className="object-contain rounded-xl"
                                 priority
                             />
                         )}
@@ -72,6 +73,13 @@ export function ProjectModal({ open, onOpenChange, project }: ProjectModalProps)
                                     <span>{project.year}</span>
                                 </div>
                             </div>
+                            
+                            {(project.demo || project.repo) && (
+                                <div className="flex items-center gap-2 text-foreground/70 animate-bounce mb-2">
+                                    <span className="text-xs font-mono uppercase tracking-widest">{dict.scrollDown}</span>
+                                    <ChevronDown className="w-4 h-4" />
+                                </div>
+                            )}
                         </div>
                     </div>
 

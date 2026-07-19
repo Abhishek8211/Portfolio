@@ -70,19 +70,6 @@
         "icon": "/stack/php.svg"
       },
       {
-        "name": "Laravel",
-        "icon": "/stack/laravel.svg",
-        "featured": true
-      },
-      {
-        "name": "ASP.NET",
-        "icon": "/stack/aspnet.svg"
-      },
-      {
-        "name": "Rust",
-        "icon": "/stack/rust.svg"
-      },
-      {
         "name": "C#",
         "icon": "/stack/csharp.svg"
       },
@@ -107,10 +94,6 @@
         "icon": "/stack/mongodb.svg"
       },
       {
-        "name": "Prisma",
-        "icon": "/stack/prisma.svg"
-      },
-      {
         "name": "Neon",
         "icon": "/stack/neon.png"
       }
@@ -123,10 +106,6 @@
       {
         "name": "Vercel",
         "icon": "/stack/vercel.svg"
-      },
-      {
-        "name": "Tauri",
-        "icon": "/stack/tauri.svg"
       }
     ]
   }

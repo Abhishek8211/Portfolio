@@ -8,10 +8,14 @@ import LanguageSwitcher from "@/components/widgets/language-switcher";
 import ThemeSwitcher from "@/components/widgets/theme-switcher";
 import { useLanguage } from "@/providers/language-provider";
 import { useLenis } from "@/providers/smooth-scroll-provider";
+import SoundToggle from "@/components/widgets/sound-toggle";
+import Magnetic from "@/components/effects/magnetic";
+import { useSound } from "@/providers/sound-provider";
 
 export default function Navbar() {
   const { dict } = useLanguage();
   const lenis = useLenis();
+  const { playHover, playClick } = useSound();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [dimensions, setDimensions] = useState({
@@ -99,10 +103,13 @@ export default function Navbar() {
 
         const isDesktop = dimensions.screenWidth >= 1280;
         const isAboutOnDesktop = targetId === "about" && isDesktop;
+        
+        // For contact, we use a custom offset to make it sit slightly higher (scroll further down).
+        const offset = targetId === "home" ? 0 : targetId === "contact" ? 160 : -navbarHeight;
 
         if (lenis) {
           lenis.scrollTo(targetId === "home" ? 0 : elem!, {
-            offset: targetId === "home" ? 0 : isAboutOnDesktop ? 0 : -navbarHeight,
+            offset: isAboutOnDesktop ? 0 : offset,
             duration: 1.5,
           });
         } else {
@@ -110,7 +117,7 @@ export default function Navbar() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           } else if (elem) {
             const rect = elem.getBoundingClientRect();
-            const offsetPosition = rect.top + window.scrollY - (isAboutOnDesktop ? 0 : navbarHeight);
+            const offsetPosition = rect.top + window.scrollY + (isAboutOnDesktop ? 0 : offset);
             window.scrollTo({
               top: offsetPosition,
               behavior: "smooth",
@@ -149,7 +156,11 @@ export default function Navbar() {
       >
         <Link
           href="#home"
-          onClick={(e) => scrollToSection(e, "#home")}
+          onClick={(e) => {
+            playClick();
+            scrollToSection(e, "#home");
+          }}
+          onMouseEnter={playHover}
           className="relative z-110 flex items-center gap-2 group"
         >
           <span className="text-xl sm:text-2xl font-black tracking-tighter uppercase text-foreground transition-all duration-300 group-hover:opacity-70">
@@ -161,19 +172,26 @@ export default function Navbar() {
           <ul className="flex items-center gap-6">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <Link
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="relative text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground group py-2"
-                >
-                  {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
-                </Link>
+                <Magnetic intensity={0.2}>
+                  <Link
+                    href={link.href}
+                    onClick={(e) => {
+                      playClick();
+                      scrollToSection(e, link.href);
+                    }}
+                    onMouseEnter={playHover}
+                    className="relative flex items-center text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground group py-2"
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
+                  </Link>
+                </Magnetic>
               </li>
             ))}
           </ul>
 
           <div className="flex items-center gap-3">
+            <SoundToggle />
             <LanguageSwitcher />
             <ThemeSwitcher />
           </div>
@@ -217,7 +235,10 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      onClick={(e) => scrollToSection(e, link.href)}
+                      onClick={(e) => {
+                        playClick();
+                        scrollToSection(e, link.href);
+                      }}
                       className="group flex items-baseline"
                     >
                       <span className="text-4xl font-black tracking-tighter uppercase text-foreground transition-all duration-300 group-hover:pl-4 group-hover:text-primary">
@@ -235,6 +256,7 @@ export default function Navbar() {
                 className="mt-8 flex items-center justify-between"
               >
                 <div className="flex items-center gap-4">
+                  <SoundToggle />
                   <LanguageSwitcher />
                   <ThemeSwitcher />
                 </div>

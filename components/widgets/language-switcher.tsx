@@ -52,7 +52,7 @@ export default function LanguageSwitcher() {
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="rounded-xl cursor-pointer my-0.5 focus:bg-secondary">
-                    <Link href={getLocalizedPath("tr")}>
+                    <Link href={getLocalizedPath("fr")}>
                         <span className={cn("mr-2 flex h-3.5 w-3.5 items-center justify-center")}>
                             {language === "fr" && <Check className="h-3.5 w-3.5" />}
                         </span>
@@ -60,7 +60,7 @@ export default function LanguageSwitcher() {
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild className="rounded-xl cursor-pointer my-0.5 focus:bg-secondary">
-                    <Link href={getLocalizedPath("tr")}>
+                    <Link href={getLocalizedPath("hi")}>
                         <span className={cn("mr-2 flex h-3.5 w-3.5 items-center justify-center")}>
                             {language === "hi" && <Check className="h-3.5 w-3.5" />}
                         </span>

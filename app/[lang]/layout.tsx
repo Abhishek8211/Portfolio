@@ -4,6 +4,7 @@ import "../globals.css";
 import SmoothScroll from "@/providers/smooth-scroll-provider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { LanguageProvider } from "@/providers/language-provider";
+import { SoundProvider } from "@/providers/sound-provider";
 import { Preloader } from "@/components/layout/preloader";
 import { CustomCursor } from "@/components/layout/custom-cursor";
 import Navbar from "@/components/layout/navbar";
@@ -45,20 +46,22 @@ export default async function LangLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <body className={`${inter.variable} ${syne.variable} font-sans bg-background text-foreground antialiased`}>
-        <LanguageProvider lang={lang} dictionary={dictionary} contents={contents} shared={shared}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem={false}
-          >
-            <CustomCursor />
-            <Preloader />
-            <SmoothScroll>
-              <Navbar />
-              {children}
-            </SmoothScroll>
-          </ThemeProvider>
-        </LanguageProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          <SoundProvider>
+            <LanguageProvider lang={lang} dictionary={dictionary} contents={contents} shared={shared}>
+              <CustomCursor />
+              <Preloader />
+              <SmoothScroll>
+                <Navbar />
+                {children}
+              </SmoothScroll>
+            </LanguageProvider>
+          </SoundProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

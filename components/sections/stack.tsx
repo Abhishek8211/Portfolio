@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useLanguage } from "@/providers/language-provider";
+import { useSound } from "@/providers/sound-provider";
+import Magnetic from "@/components/effects/magnetic";
 import { BlurReveal } from "@/components/effects/blur-reveal";
 import {
     HoverCard,
@@ -12,6 +14,7 @@ import type { StackItem } from "@/types/stack";
 
 export default function Stack() {
     const { content, dict } = useLanguage();
+    const { playHover } = useSound();
 
     const categories = [
         {
@@ -63,13 +66,17 @@ export default function Stack() {
                                     {category.items.map((item: StackItem) => (
                                         <HoverCard key={item.name} openDelay={50} closeDelay={50}>
                                             <HoverCardTrigger asChild>
-                                                <div className="group flex items-center gap-3 py-2.5 px-1 shrink-0 cursor-default">
-                                                    <div className="transition-all duration-500 ease-out opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110">
-                                                        <Image src={item.icon} alt={item.name} width={20} height={20} unoptimized={item.icon.endsWith('.svg')} />
-                                                    </div>
-                                                    <span className="text-sm tracking-wide text-muted-foreground transition-colors duration-500 ease-out group-hover:text-foreground">
-                                                        {item.name}
-                                                    </span>
+                                                <div className="w-fit h-fit">
+                                                    <Magnetic intensity={0.15}>
+                                                        <div className="group flex items-center gap-3 py-2.5 px-1 shrink-0 cursor-default">
+                                                            <div className="transition-all duration-500 ease-out opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110">
+                                                                <Image src={item.icon} alt={item.name} width={20} height={20} unoptimized={item.icon.endsWith('.svg')} />
+                                                            </div>
+                                                            <span className="text-sm tracking-wide text-muted-foreground transition-colors duration-500 ease-out group-hover:text-foreground">
+                                                                {item.name}
+                                                            </span>
+                                                        </div>
+                                                    </Magnetic>
                                                 </div>
                                             </HoverCardTrigger>
                                             <HoverCardContent

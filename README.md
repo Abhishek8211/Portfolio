@@ -1,37 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <h1>Hi, I'm Abhishek Kumar 👋</h1>
+  <p>A Data Science and Machine Learning student who loves building modern and interactive web applications.</p>
+</div>
 
-## Getting Started
+<br />
 
-First, run the development server:
+## 🌟 About This Portfolio
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This repository contains the source code for my personal portfolio website. It serves as a digital resume and a showcase of my projects, skills, and learning journey from basic web technologies to Full-Stack development and AI integrations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+I strongly believe that great software should be **simple**, **clean**, **fast**, and **easy to use**. This portfolio reflects those values through a clean design, smooth animations, and optimized performance.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Featured Projects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Here are some of the projects featured in this portfolio:
 
-## Learn More
+- **[Energy Calculator Chatbot](https://github.com/Abhishek8211/Energy-Calculator-ChatBot.git)**: An AI-powered web app that helps users estimate household energy consumption using OpenRouter, Next.js, and Tailwind CSS.
+- **[WordGame](https://github.com/Abhishek8211/WordGame.git)**: A real-time multiplayer word-building game built with React, Node.js, Socket.io, and Tailwind CSS.
+- **[HandwritingAI](https://github.com/Abhishek8211/HandwrittenAI.git)**: An AI-powered web app that transforms typed text into realistic handwritten notes.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Built With
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is built with the latest web technologies to ensure a fast, responsive, and engaging user experience:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **[Next.js](https://nextjs.org/)** - React framework for production
+- **[React 19](https://react.dev/)** - The library for web and native user interfaces
+- **[Tailwind CSS 4](https://tailwindcss.com/)** - A utility-first CSS framework
+- **[Framer Motion](https://www.framer.com/motion/)** - Production-ready animation library for React
+- **[Lenis](https://lenis.darkroom.engineering/)** - Smooth scrolling for the web
+- **[shadcn/ui](https://ui.shadcn.com/)** & **[Radix UI](https://www.radix-ui.com/)** - Accessible and customizable UI components
+- **[EmailJS](https://www.emailjs.com/)** - For seamless contact form submissions
 
-## Deploy on Vercel
+## 💻 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Follow these instructions to set up the project locally on your machine.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-"# Portfolio" 
+### Prerequisites
+
+Ensure you have Node.js and npm installed.
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Abhishek8211/Portfolio.git
+   ```
+
+2. **Navigate to the project directory**
+   ```bash
+   cd Portfolio/my-app
+   ```
+   *(Note: The Next.js app is located in the `my-app` directory)*
+
+3. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **View the app**
+   Open [http://localhost:3000](http://localhost:3000) in your browser to see the portfolio in action.
+
+## 📂 Customizing Content
+
+The content for this portfolio is completely data-driven. You can easily modify the text, projects, and roadmap without touching the UI components by editing the JSON file:
+
+- `contents/en.json`: Contains all the textual data, project details, and roadmap information.
+
+## 📫 Contact
+
+Feel free to reach out to me!
+
+- **GitHub:** [@Abhishek8211](https://github.com/Abhishek8211)
+- **LinkedIn:** [*(Add your LinkedIn URL)*](#)
+- **Email:** [*(Add your Email)*](#)
+
+---
+<p align="center">
+  <i>Designed and built with ❤️ by Abhishek Kumar</i>
+</p>

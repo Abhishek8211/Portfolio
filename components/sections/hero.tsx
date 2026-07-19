@@ -7,6 +7,8 @@ import { useLanguage } from "@/providers/language-provider";
 import { ArrowRight, Mouse, FileText } from "lucide-react";
 import { ContactModal } from "@/components/modals/contact-modal";
 import { InteractiveParticles } from "@/components/effects/interactive-particles";
+import Magnetic from "@/components/effects/magnetic";
+import { useSound } from "@/providers/sound-provider";
 
 const TRACK_1 = [
     "/hero-slider/makise-kurisu-2.webp",
@@ -31,6 +33,7 @@ const COL_2_IMAGES = [...TRACK_2, ...TRACK_2];
 
 export default function Hero() {
     const { content, dict } = useLanguage();
+    const { playHover, playClick } = useSound();
     const containerRef = useRef<HTMLDivElement>(null);
     const [contactOpen, setContactOpen] = useState(false);
 
@@ -163,40 +166,56 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row flex-wrap sm:items-center gap-4">
-                        <button
-                            onClick={() => setContactOpen(true)}
-                            className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-border/50 bg-foreground px-6 xl:px-10 text-background transition-all duration-500 ease-out hover:bg-background hover:border-foreground/30 hover:text-foreground shadow-2xl hover:-translate-y-0.5"
-                        >
-                            <div className="absolute inset-0 flex h-full w-full justify-center -translate-x-full -skew-x-12 group-hover:duration-1000 group-hover:translate-x-full">
-                                <div className="relative h-full w-8 bg-background/20 dark:bg-foreground/10" />
-                            </div>
-                            <span className="relative z-10 flex items-center gap-2 xl:gap-3 text-xs xl:text-base font-semibold tracking-[0.15em] uppercase">
-                                {dict.contactMe}
-                                <ArrowRight className="w-3.5 xl:w-5 h-3.5 xl:h-5 transition-transform duration-500 group-hover:translate-x-1" />
-                            </span>
-                        </button>
+                        <Magnetic>
+                            <button
+                                onClick={() => {
+                                    playClick();
+                                    setContactOpen(true);
+                                }}
+                                onMouseEnter={playHover}
+                                className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-border/50 bg-foreground px-6 xl:px-10 text-background transition-all duration-500 ease-out hover:bg-background hover:border-foreground/30 hover:text-foreground shadow-2xl hover:-translate-y-0.5"
+                            >
+                                <div className="absolute inset-0 flex h-full w-full justify-center -translate-x-full -skew-x-12 group-hover:duration-1000 group-hover:translate-x-full">
+                                    <div className="relative h-full w-8 bg-background/20 dark:bg-foreground/10" />
+                                </div>
+                                <span className="relative z-10 flex items-center gap-2 xl:gap-3 text-xs xl:text-base font-semibold tracking-[0.15em] uppercase">
+                                    {dict.contactMe}
+                                    <ArrowRight className="w-3.5 xl:w-5 h-3.5 xl:h-5 transition-transform duration-500 group-hover:translate-x-1" />
+                                </span>
+                            </button>
+                        </Magnetic>
 
-                        <button
-                            onClick={scrollToProjects}
-                            className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center px-6 xl:px-10 text-muted-foreground transition-all duration-500 hover:text-foreground hover:bg-secondary/15 rounded-full border border-border sm:border-transparent hover:border-border/30 backdrop-blur-sm"
-                        >
-                            <span className="relative z-10 text-xs xl:text-base font-semibold tracking-[0.15em] uppercase flex items-center gap-2 xl:gap-3">
-                                <Mouse className="w-3.5 xl:w-5 h-3.5 xl:h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                {dict.exploreProjects}
-                            </span>
-                        </button>
+                        <Magnetic>
+                            <button
+                                onClick={() => {
+                                    playClick();
+                                    scrollToProjects();
+                                }}
+                                onMouseEnter={playHover}
+                                className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center px-6 xl:px-10 text-muted-foreground transition-all duration-500 hover:text-foreground hover:bg-secondary/15 rounded-full border border-border sm:border-transparent hover:border-border/30 backdrop-blur-sm"
+                            >
+                                <span className="relative z-10 text-xs xl:text-base font-semibold tracking-[0.15em] uppercase flex items-center gap-2 xl:gap-3">
+                                    <Mouse className="w-3.5 xl:w-5 h-3.5 xl:h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                                    {dict.exploreProjects}
+                                </span>
+                            </button>
+                        </Magnetic>
 
-                        <a
-                            href="https://drive.google.com/file/d/1VTweF1hGUIltWGFodW5uZwyAQNDxF1UF/view?usp=sharing"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center px-6 xl:px-10 text-muted-foreground transition-all duration-500 hover:text-foreground hover:bg-secondary/15 rounded-full border border-border sm:border-transparent hover:border-border/30 backdrop-blur-sm"
-                        >
-                            <span className="relative z-10 text-xs xl:text-base font-semibold tracking-[0.15em] uppercase flex items-center gap-2 xl:gap-3">
-                                <FileText className="w-3.5 xl:w-5 h-3.5 xl:h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                {dict.resume}
-                            </span>
-                        </a>
+                        <Magnetic>
+                            <a
+                                href="https://drive.google.com/file/d/1VTweF1hGUIltWGFodW5uZwyAQNDxF1UF/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={playClick}
+                                onMouseEnter={playHover}
+                                className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center px-6 xl:px-10 text-muted-foreground transition-all duration-500 hover:text-foreground hover:bg-secondary/15 rounded-full border border-border sm:border-transparent hover:border-border/30 backdrop-blur-sm"
+                            >
+                                <span className="relative z-10 text-xs xl:text-base font-semibold tracking-[0.15em] uppercase flex items-center gap-2 xl:gap-3">
+                                    <FileText className="w-3.5 xl:w-5 h-3.5 xl:h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                                    {dict.resume}
+                                </span>
+                            </a>
+                        </Magnetic>
                     </div>
                 </div>
 

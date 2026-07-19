@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import {
     Dialog,
     DialogContent,
@@ -7,10 +8,12 @@ import {
 } from "@/components/ui/dialog";
 
 import { useLanguage } from "@/providers/language-provider";
-import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { useLenisModal } from "@/hooks/use-lenis-modal";
-import { sanitizePhone } from "@/lib/utils";
+import { useLenis } from "@/providers/smooth-scroll-provider";
 import { ShineButton } from "@/components/ui/shine-button";
+import Magnetic from "@/components/effects/magnetic";
+import { useSound } from "@/providers/sound-provider";
 
 interface ContactModalProps {
     open: boolean;
@@ -20,6 +23,32 @@ interface ContactModalProps {
 export function ContactModal({ open, onOpenChange }: ContactModalProps) {
     const { content, dict } = useLanguage();
     useLenisModal(open);
+    const lenis = useLenis();
+    const { playClick } = useSound();
+
+    const handleScrollToContact = useCallback(() => {
+        playClick();
+        onOpenChange(false);
+
+        setTimeout(() => {
+            const elem = document.getElementById("contact");
+            if (elem) {
+                if (lenis) {
+                    lenis.scrollTo(elem, {
+                        offset: 160,
+                        duration: 1.5,
+                    });
+                } else {
+                    const rect = elem.getBoundingClientRect();
+                    const offsetPosition = rect.top + window.scrollY + 160;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                    });
+                }
+            }
+        }, 300); // Wait for modal close animation
+    }, [onOpenChange, lenis]);
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
@@ -41,45 +70,43 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
                 </div>
 
                 <div className="overflow-y-auto px-8 pb-8 pt-2 flex-1" data-lenis-prevent="true">
-                    <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-2">
-                        <a
-                            href={`mailto:${content.contact.email}`}
-                            className="group flex items-center gap-4 px-5 py-2.5 rounded-full border border-border/50 bg-secondary/20 backdrop-blur-sm hover:bg-foreground hover:border-foreground/30 transition-all duration-500 ease-out"
-                        >
-                            <div className="w-8 h-8 rounded-full border border-border/50 bg-background flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-background transition-transform duration-500">
-                                <Mail className="w-3.5 h-3.5 text-foreground" />
-                            </div>
-                            <span className="text-foreground tracking-wide font-medium text-sm group-hover:text-background transition-colors duration-500">
-                                {content.contact.email}
-                            </span>
-                        </a>
+                    <div className="flex flex-col mt-4">
+                        <Magnetic>
+                            <button
+                                onClick={handleScrollToContact}
+                                className="group relative flex w-full h-14 items-center justify-between rounded-full border border-border/50 bg-foreground px-6 sm:px-8 text-background transition-all duration-500 ease-out hover:bg-background hover:text-foreground hover:border-foreground/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.05)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.03)] hover:-translate-y-1 active:scale-[0.98] active:translate-y-0"
+                                aria-label="Send a Message"
+                            >
+                                <div className="absolute inset-0 flex h-full w-full justify-center -translate-x-full -skew-x-12 group-hover:duration-1000 group-hover:translate-x-full">
+                                    <div className="relative h-full w-8 bg-background/20 dark:bg-foreground/10" />
+                                </div>
 
-                        <a
-                            href={`tel:${sanitizePhone(content.contact.phone)}`}
-                            className="group flex items-center gap-4 px-5 py-2.5 rounded-full border border-border/50 bg-secondary/20 backdrop-blur-sm hover:bg-foreground hover:border-foreground/30 transition-all duration-500 ease-out"
-                        >
-                            <div className="w-8 h-8 rounded-full border border-border/50 bg-background flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-background transition-transform duration-500">
-                                <Phone className="w-3.5 h-3.5 text-foreground" />
-                            </div>
-                            <span className="text-foreground tracking-wide font-medium text-sm group-hover:text-background transition-colors duration-500">
-                                {content.contact.phone}
-                            </span>
-                        </a>
+                                <div className="w-5" aria-hidden="true" />
+                                <span className="relative z-10 text-sm font-semibold tracking-[0.15em] uppercase">
+                                    Send a Message
+                                </span>
+                                <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" />
+                            </button>
+                        </Magnetic>
                     </div>
 
-                    <div className="flex flex-wrap gap-3 items-center mt-6">
+                    <div className="flex flex-wrap gap-3 items-center mt-8 justify-center sm:justify-start">
                         {content.social.map((link: { label: string; href: string }) => (
                             <div key={link.label}>
-                                <ShineButton
-                                    href={link.href}
-                                    className="h-10 px-5"
-                                    shineClassName="w-4 bg-background/20 dark:bg-background/20"
-                                >
-                                    <span className="relative z-10 flex items-center gap-2 text-xs tracking-widest uppercase font-medium">
-                                        {link.label}
-                                        <ArrowUpRight className="w-3 h-3 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                                    </span>
-                                </ShineButton>
+                                <Magnetic intensity={0.2}>
+                                    <div onClick={playClick}>
+                                        <ShineButton
+                                            href={link.href}
+                                            className="h-10 px-5"
+                                            shineClassName="w-4 bg-background/20 dark:bg-background/20"
+                                        >
+                                            <span className="relative z-10 flex items-center gap-2 text-xs tracking-widest uppercase font-medium">
+                                                {link.label}
+                                                <ArrowUpRight className="w-3 h-3 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                            </span>
+                                        </ShineButton>
+                                    </div>
+                                </Magnetic>
                             </div>
                         ))}
                     </div>

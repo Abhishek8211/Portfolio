@@ -8,6 +8,8 @@ import { useMediaQuery, BREAKPOINTS } from "@/hooks/use-media-query";
 import { BlurReveal } from "@/components/effects/blur-reveal";
 import { ProjectModal } from "@/components/modals/project-modal";
 import type { ProjectItem } from "@/types/project";
+import Magnetic from "@/components/effects/magnetic";
+import { useSound } from "@/providers/sound-provider";
 
 export default function Projects() {
     const { content, dict } = useLanguage();
@@ -189,13 +191,19 @@ export default function Projects() {
 }
 
 const ProjectCard = React.memo(function ProjectCard({ project, onClick }: { project: ProjectItem; onClick?: () => void }) {
+    const { playHover, playClick } = useSound();
+    
     return (
         <BlurReveal>
-            <div
-                onClick={onClick}
-                className="group relative w-full xl:w-[45vw] aspect-4/3 shrink-0 xl:mx-6 perspective-1000 cursor-pointer"
-            >
-                <div className="relative w-full h-full overflow-hidden bg-muted border border-border/50 transition-all duration-700 ease-out group-hover:border-foreground/20">
+            <Magnetic intensity={0.05}>
+                <div
+                    onClick={(e) => {
+                        playClick();
+                        onClick?.();
+                    }}
+                    className="group relative w-full xl:w-[45vw] aspect-[4/3] shrink-0 xl:mx-6 perspective-1000 cursor-pointer"
+                >
+                <div className="relative w-full h-full overflow-hidden rounded-2xl bg-muted border border-border/50 transition-all duration-700 ease-out group-hover:border-foreground/20">
                     <div className="absolute inset-0 z-0">
                         <Image
                             src={project.image}
@@ -203,7 +211,7 @@ const ProjectCard = React.memo(function ProjectCard({ project, onClick }: { proj
                             fill
                             sizes="(max-width: 1280px) 100vw, 45vw"
                             loading="lazy"
-                            className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0"
+                            className="object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
                     </div>
@@ -228,7 +236,8 @@ const ProjectCard = React.memo(function ProjectCard({ project, onClick }: { proj
                     </div>
 
                 </div>
-            </div>
+                </div>
+            </Magnetic>
         </BlurReveal>
     );
 });
