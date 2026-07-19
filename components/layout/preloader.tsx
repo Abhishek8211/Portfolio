@@ -86,8 +86,8 @@ export function Preloader() {
                             <Image
                                 src="/logo.png"
                                 alt="Logo"
-                                width={56}
-                                height={56}
+                                width={192}
+                                height={192}
                                 className="object-contain z-10"
                                 priority
                             />

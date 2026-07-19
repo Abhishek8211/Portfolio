@@ -15,12 +15,12 @@ const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Kintarowwwards",
+  title: "Abhishek",
   description: "Creative Developer Portfolio",
 };
 
 export function generateStaticParams() {
-  return [{ lang: 'en' }, { lang: 'tr' }];
+  return [{ lang: 'en' }, { lang: 'es' }, { lang: 'fr' }, { lang: 'hi' }];
 }
 
 export default async function LangLayout({
