@@ -10,10 +10,6 @@
       "href": "https://github.com/Abhishek8211"
     },
     {
-      "label": "Discord",
-      "href": ""
-    },
-    {
       "label": "Instagram",
       "href": "https://www.instagram.com/ig.abhishek__1/"
     },
@@ -93,10 +89,6 @@
       {
         "name": "Python",
         "icon": "/stack/python.svg"
-      },
-      {
-        "name": "Discord.js",
-        "icon": "/stack/discordjs.svg"
       }
     ],
     "database": [

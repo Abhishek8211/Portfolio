@@ -47,7 +47,7 @@
 @theme inline {
   --breakpoint-3xl: 1920px;
   --spacing-container: var(--container-spacing);
-  --animate-scroll: scroll 60s linear infinite;
+  --animate-scroll: scroll 50s linear infinite;
 }
 
 @keyframes scroll {
