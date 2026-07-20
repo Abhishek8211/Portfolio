@@ -103,7 +103,7 @@ export default function Navbar() {
 
         const isDesktop = dimensions.screenWidth >= 1280;
         const isAboutOnDesktop = targetId === "about" && isDesktop;
-        
+
         // For contact, we use a custom offset to make it sit slightly higher (scroll further down).
         const offset = targetId === "home" ? 0 : targetId === "contact" ? 160 : -navbarHeight;
 
