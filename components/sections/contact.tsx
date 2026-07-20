@@ -445,7 +445,7 @@ export default function Contact() {
 
                         {/* ─── Social Icons ─── */}
                         <BlurReveal delay={0.3}>
-                            <div className="flex items-center gap-3 pt-2">
+                            <div className="hidden lg:flex items-center gap-3 pt-2">
                                 {content.social.map((link: { label: string; href: string }) => {
                                     const IconComponent = getSocialIcon(link.label);
                                     return (
@@ -471,6 +471,26 @@ export default function Contact() {
                                 })}
                             </div>
                         </BlurReveal>
+                        
+                        {/* ─── Mobile Scroll Indicator ─── */}
+                        <div className="lg:hidden flex flex-col items-center justify-center gap-4 -mt-16 pb-4 text-muted-foreground w-full">
+                            <div className="w-px h-12 bg-border relative overflow-hidden">
+                                <motion.div
+                                    className="absolute top-0 left-0 w-full h-1/2 bg-foreground"
+                                    animate={{
+                                        y: ["0%", "100%", "0%"]
+                                    }}
+                                    transition={{
+                                        duration: 2.5,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }}
+                                />
+                            </div>
+                            <span className="text-[10px] font-mono tracking-[0.2em] uppercase opacity-70">
+                                {dict.scrollDown} to send message
+                            </span>
+                        </div>
                     </div>
 
                     {/* ─── Right Column: Contact Form ─── */}
