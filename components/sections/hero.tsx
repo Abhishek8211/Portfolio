@@ -54,7 +54,7 @@ export default function Hero() {
     return (
         <section
             ref={containerRef}
-            className="sticky top-0 h-screen w-full flex flex-col justify-between bg-background px-container md:px-16 pt-28 pb-12 sm:pt-32 sm:pb-16 2xl:pb-24 overflow-hidden"
+            className="sticky top-0 h-auto lg:h-screen w-full flex flex-col justify-start lg:justify-between bg-background px-container md:px-16 pt-0 lg:pt-28 pb-2 lg:pb-12 sm:pt-24 lg:sm:pt-32 sm:pb-16 2xl:pb-24 overflow-hidden"
             id="home"
         >
             <InteractiveParticles />
@@ -119,7 +119,7 @@ export default function Hero() {
 
             <motion.div
                 style={{ opacity, scale, y, filter }}
-                className="relative z-20 flex-1 flex flex-col gap-6 sm:gap-8 xl:gap-12 justify-end w-full h-full will-change-[opacity,transform,filter]"
+                className="relative z-20 flex-1 flex flex-col gap-4 lg:gap-6 sm:gap-6 xl:gap-12 justify-start lg:justify-end w-full h-full will-change-[opacity,transform,filter]"
             >
 
                 <div className="flex justify-between items-start w-full">
@@ -148,7 +148,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="w-full mt-auto flex flex-col justify-center relative z-20 mix-blend-difference">
+                <div className="w-full mt-0 lg:mt-auto flex flex-col justify-center relative z-20 mix-blend-difference">
                     <div className="overflow-hidden">
                         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl 3xl:text-[140px] font-black tracking-tighter leading-[0.85] text-foreground uppercase whitespace-nowrap">
                             ABHISHEK
