@@ -142,10 +142,8 @@ export default function Navbar() {
       <motion.div
         style={{
           opacity: bgOpacity,
-          backdropFilter,
-          WebkitBackdropFilter: backdropFilter,
         }}
-        className="absolute inset-0 bg-background/75 border-b border-border/40 -z-10 pointer-events-none"
+        className="absolute inset-0 bg-background/75 border-b border-border/40 backdrop-blur-md -z-10 pointer-events-none"
       />
 
       <motion.nav

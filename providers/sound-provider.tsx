@@ -12,7 +12,7 @@ interface SoundContextType {
 const SoundContext = createContext<SoundContextType | undefined>(undefined);
 
 export function SoundProvider({ children }: { children: React.ReactNode }) {
-    const [isMuted, setIsMuted] = useState(true); // Default to muted to avoid jarring users
+    const [isMuted, setIsMuted] = useState(false); // Default to unmuted
     const audioCtxRef = useRef<AudioContext | null>(null);
 
     useEffect(() => {
@@ -20,9 +20,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
         if (savedMute !== null) {
             setIsMuted(savedMute === "true");
         } else {
-            // Auto mute on touch devices by default if no preference is saved
-            const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-            setIsMuted(isTouchDevice);
+            setIsMuted(false);
         }
     }, []);
 
@@ -32,6 +30,19 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
             localStorage.setItem("sound-muted", String(newValue));
             return newValue;
         });
+        
+        // Also ensure AudioContext is initialized/resumed on user gesture
+        try {
+            if (!audioCtxRef.current) {
+                const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+                audioCtxRef.current = new AudioContext();
+            }
+            if (audioCtxRef.current.state === "suspended") {
+                audioCtxRef.current.resume();
+            }
+        } catch (e) {
+            console.error("Audio resume failed:", e);
+        }
     }, []);
 
     const initAudioContext = useCallback(() => {
@@ -61,7 +72,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
             osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.05);
             
             gain.gain.setValueAtTime(0, ctx.currentTime);
-            gain.gain.linearRampToValueAtTime(0.015, ctx.currentTime + 0.01);
+            gain.gain.linearRampToValueAtTime(0.1, ctx.currentTime + 0.01);
             gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
             
             osc.start(ctx.currentTime);
@@ -87,7 +98,7 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
             osc.frequency.exponentialRampToValueAtTime(100, ctx.currentTime + 0.1);
             
             gain.gain.setValueAtTime(0, ctx.currentTime);
-            gain.gain.linearRampToValueAtTime(0.04, ctx.currentTime + 0.01);
+            gain.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 0.01);
             gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
             
             osc.start(ctx.currentTime);

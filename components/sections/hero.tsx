@@ -57,11 +57,10 @@ export default function Hero() {
             className="sticky top-0 h-auto lg:h-screen w-full flex flex-col justify-start lg:justify-between bg-background px-container md:px-16 pt-0 lg:pt-28 pb-2 lg:pb-12 sm:pt-24 lg:sm:pt-32 sm:pb-16 2xl:pb-24 overflow-hidden"
             id="home"
         >
-            <InteractiveParticles />
 
             <motion.div
                 style={{ opacity }}
-                className="absolute top-0 right-6 sm:right-12 md:right-16 lg:right-24 xl:right-36 2xl:right-48 bottom-0 h-full w-55 sm:w-65 md:w-85 lg:w-100 xl:w-110 2xl:w-120 flex gap-3 sm:gap-4 px-2 overflow-hidden z-5 pointer-events-none select-none opacity-[0.22] dark:opacity-[0.28] mix-blend-luminosity"
+                className="absolute top-0 right-6 sm:right-12 md:right-16 lg:right-24 xl:right-36 2xl:right-48 bottom-0 h-full w-55 sm:w-65 md:w-85 lg:w-100 xl:w-110 2xl:w-120 flex gap-3 sm:gap-4 px-2 overflow-hidden z-5 pointer-events-none select-none opacity-[0.22] dark:opacity-[0.28]"
             >
                 <div className="max-md:hidden flex-1 h-full overflow-hidden relative">
                     <motion.div
@@ -118,8 +117,8 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-                style={{ opacity, scale, y, filter }}
-                className="relative z-20 flex-1 flex flex-col gap-4 lg:gap-6 sm:gap-6 xl:gap-12 justify-start lg:justify-end w-full h-full will-change-[opacity,transform,filter]"
+                style={{ opacity, scale, y }}
+                className="relative z-20 flex-1 flex flex-col gap-4 lg:gap-6 sm:gap-6 xl:gap-12 justify-start lg:justify-end w-full h-full will-change-[opacity,transform]"
             >
 
                 <div className="flex justify-between items-start w-full">
@@ -148,7 +147,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="w-full mt-0 lg:mt-auto flex flex-col justify-center relative z-20 mix-blend-difference">
+                <div className="w-full mt-0 lg:mt-auto flex flex-col justify-center relative z-20">
                     <div className="overflow-hidden">
                         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl 3xl:text-[140px] font-black tracking-tighter leading-[0.85] text-foreground uppercase whitespace-nowrap">
                             ABHISHEK
@@ -161,7 +160,7 @@ export default function Hero() {
                 </div>
 
                 <div className="space-y-6 sm:space-y-8 xl:space-y-10">
-                    <p className="sm:text-lg 2xl:text-xl text-muted-foreground font-light leading-relaxed max-w-xl mix-blend-difference">
+                    <p className="sm:text-lg 2xl:text-xl text-muted-foreground font-light leading-relaxed max-w-xl">
                         {content.about.description}
                     </p>
 

@@ -12,7 +12,7 @@ export default function ManifestoFlow({ reverse = false }: { reverse?: boolean }
   const manifestoItems = content?.manifesto || [];
 
   return (
-    <div className="relative w-full overflow-hidden border-y border-border/50 py-10 select-none pointer-events-none bg-background/50 backdrop-blur-sm">
+    <div className="relative w-full overflow-hidden border-y border-border/50 py-10 select-none pointer-events-none bg-background/50">
 
       <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
 

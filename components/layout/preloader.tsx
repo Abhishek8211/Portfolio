@@ -88,7 +88,7 @@ export function Preloader() {
                                 alt="Logo"
                                 width={192}
                                 height={192}
-                                className="object-contain z-10"
+                                className="object-contain z-10 invert dark:invert-0"
                                 priority
                             />
                         </div>

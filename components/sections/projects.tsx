@@ -203,7 +203,7 @@ const ProjectCard = React.memo(function ProjectCard({ project, onClick }: { proj
                     }}
                     className="group relative w-full xl:w-[45vw] aspect-[4/3] shrink-0 xl:mx-6 perspective-1000 cursor-pointer"
                 >
-                <div className="relative w-full h-full overflow-hidden rounded-2xl bg-muted border border-border/50 transition-all duration-700 ease-out group-hover:border-foreground/20">
+                <div className="absolute inset-0 overflow-hidden rounded-2xl bg-muted border border-border/50 transition-all duration-700 ease-out group-hover:border-foreground/20">
                     <div className="absolute inset-0 z-0">
                         <Image
                             src={project.image}

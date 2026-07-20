@@ -69,7 +69,7 @@ export default function Stack() {
                                                 <div className="w-fit h-fit">
                                                     <Magnetic intensity={0.15}>
                                                         <div className="group flex items-center gap-3 py-2.5 px-1 shrink-0 cursor-default">
-                                                            <div className="transition-all duration-500 ease-out opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110">
+                                                            <div className="transition-all duration-500 ease-out opacity-90 group-hover:opacity-100 group-hover:scale-110">
                                                                 <Image src={item.icon} alt={item.name} width={20} height={20} unoptimized={item.icon.endsWith('.svg')} />
                                                             </div>
                                                             <span className="text-sm tracking-wide text-muted-foreground transition-colors duration-500 ease-out group-hover:text-foreground">

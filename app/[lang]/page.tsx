@@ -6,11 +6,13 @@ import Stack from "@/components/sections/stack";
 import Projects from "@/components/sections/projects";
 import Roadmap from "@/components/sections/roadmap";
 import Contact from "@/components/sections/contact";
+import { InteractiveParticles } from "@/components/effects/interactive-particles";
 
 export default function Home() {
   return (
     <>
       <ScrollProgress />
+      <InteractiveParticles />
 
       <main className="bg-background relative">
 
