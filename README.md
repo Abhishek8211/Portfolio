@@ -16,7 +16,7 @@ I strongly believe that great software should be **simple**, **clean**, **fast**
 Here are some of the projects featured in this portfolio:
 
 - **[Energy Calculator Chatbot](https://github.com/Abhishek8211/Energy-Calculator-ChatBot.git)**: An AI-powered web app that helps users estimate household energy consumption using OpenRouter, Next.js, and Tailwind CSS.
-- **[WordGame](https://github.com/Abhishek8211/WordGame.git)**: A real-time multiplayer word-building game built with React, Node.js, Socket.io, and Tailwind CSS.
+- **[WordGame](https://github.com/Abhishek8211/WordGame.git)** ([Live Demo](https://wordgame-rho-ten.vercel.app/)): A real-time multiplayer word-building game built with React, Node.js, Socket.io, and Tailwind CSS.
 - **[HandwritingAI](https://github.com/Abhishek8211/HandwrittenAI.git)**: An AI-powered web app that transforms typed text into realistic handwritten notes.
 
 ## 🛠️ Built With
@@ -76,8 +76,8 @@ The content for this portfolio is completely data-driven. You can easily modify 
 Feel free to reach out to me!
 
 - **GitHub:** [@Abhishek8211](https://github.com/Abhishek8211)
-- **LinkedIn:** [*(Add your LinkedIn URL)*](#)
-- **Email:** [*(Add your Email)*](#)
+- **LinkedIn:** [Abhishek Kumar](https://www.linkedin.com/in/abhishek-kumar8211/)
+- **Email:** [Abhishek Kumar](mailto:abhishekkrbgp8211@gmail.com)
 
 ---
 <p align="center">

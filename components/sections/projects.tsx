@@ -211,7 +211,7 @@ const ProjectCard = React.memo(function ProjectCard({ project, onClick }: { proj
                             fill
                             sizes="(max-width: 1280px) 100vw, 45vw"
                             loading="lazy"
-                            className="object-contain opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 grayscale group-hover:grayscale-0"
+                            className="object-contain opacity-60 max-md:opacity-100 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 grayscale max-md:grayscale-0 group-hover:grayscale-0"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
                     </div>

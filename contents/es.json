@@ -36,6 +36,7 @@
             "year": "2025",
             "description": "WordGame es un juego multijugador en tiempo real donde los jugadores compiten colocando estratégicamente letras en una cuadrícula compartida para formar palabras válidas en inglés. Cada palabra correcta otorga puntos, fomentando la creatividad mientras el tablero cambia constantemente.\n\nDesarrollado con tecnologías web modernas y comunicación en tiempo real, el juego ofrece una experiencia fluida con puntuaciones en vivo, turnos temporizados y una jugabilidad interactiva. Combinando estrategia, vocabulario y rapidez de decisión, WordGame brinda una experiencia divertida y competitiva para jugadores de todos los niveles.",
             "image": "/projects/wordgame.png",
+            "demo": "https://wordgame-rho-ten.vercel.app/",
             "repo": "https://github.com/Abhishek8211/WordGame.git",
             "stack": [
                 "React",

@@ -36,6 +36,7 @@
             "year": "2025",
             "description": "WordGame is a real-time multiplayer word-building game where players compete by strategically placing letters on a shared grid to create valid English words. Every correctly formed word earns points, encouraging players to think creatively while adapting to an ever-changing board.\n\nBuilt with modern web technologies and real-time communication, the game delivers a smooth multiplayer experience with live score updates, timed turns, and interactive gameplay. Combining strategy, vocabulary, and quick decision-making, WordGame offers a fun and competitive experience for players of all skill levels.",
             "image": "/projects/wordgame.png",
+            "demo": "https://wordgame-rho-ten.vercel.app/",
             "repo": "https://github.com/Abhishek8211/WordGame.git",
             "stack": [
                 "React",
