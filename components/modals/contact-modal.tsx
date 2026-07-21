@@ -14,6 +14,7 @@ import { useLenis } from "@/providers/smooth-scroll-provider";
 import { ShineButton } from "@/components/ui/shine-button";
 import Magnetic from "@/components/effects/magnetic";
 import { useSound } from "@/providers/sound-provider";
+import { socialIconMap } from "@/components/sections/contact";
 
 interface ContactModalProps {
     open: boolean;
@@ -91,7 +92,9 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
                     </div>
 
                     <div className="flex flex-wrap gap-3 items-center mt-8 justify-center sm:justify-start">
-                        {content.social.map((link: { label: string; href: string }) => (
+                        {content.social.map((link: { label: string; href: string }) => {
+                            const IconComponent = socialIconMap[link.label.toLowerCase()] || null;
+                            return (
                             <div key={link.label}>
                                 <Magnetic intensity={0.2}>
                                     <div onClick={playClick}>
@@ -101,6 +104,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
                                             shineClassName="w-4 bg-background/20 dark:bg-background/20"
                                         >
                                             <span className="relative z-10 flex items-center gap-2 text-xs tracking-widest uppercase font-medium">
+                                                {IconComponent && <IconComponent className="w-3 h-3" />}
                                                 {link.label}
                                                 <ArrowUpRight className="w-3 h-3 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
                                             </span>
@@ -108,7 +112,8 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
                                     </div>
                                 </Magnetic>
                             </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
 
