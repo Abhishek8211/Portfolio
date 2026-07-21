@@ -56,9 +56,18 @@ export function CustomCursor() {
             isVisibleRef.current = true;
             setIsVisible(true);
         };
+        const handleMouseOut = (e: MouseEvent) => {
+            const related = e.relatedTarget as HTMLElement | null;
+            if (!related || related.tagName?.toLowerCase() === "iframe") {
+                setIsHovering(false);
+                setIsVisible(false);
+                isVisibleRef.current = false;
+            }
+        };
 
         window.addEventListener("mousemove", moveCursor);
         window.addEventListener("mouseover", handleMouseOver);
+        window.addEventListener("mouseout", handleMouseOut);
         document.addEventListener("mouseleave", handleMouseLeave);
         document.addEventListener("mouseenter", handleMouseEnter);
 
@@ -66,6 +75,7 @@ export function CustomCursor() {
             cancelAnimationFrame(frameId);
             window.removeEventListener("mousemove", moveCursor);
             window.removeEventListener("mouseover", handleMouseOver);
+            window.removeEventListener("mouseout", handleMouseOut);
             document.removeEventListener("mouseleave", handleMouseLeave);
             document.removeEventListener("mouseenter", handleMouseEnter);
         };

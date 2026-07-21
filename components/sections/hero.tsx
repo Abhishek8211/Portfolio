@@ -6,6 +6,7 @@ import { useScroll, useTransform, useMotionTemplate, motion } from "framer-motio
 import { useLanguage } from "@/providers/language-provider";
 import { ArrowRight, Mouse, FileText } from "lucide-react";
 import { ContactModal } from "@/components/modals/contact-modal";
+import { ResumeModal } from "@/components/modals/resume-modal";
 import { InteractiveParticles } from "@/components/effects/interactive-particles";
 import Magnetic from "@/components/effects/magnetic";
 import { useSound } from "@/providers/sound-provider";
@@ -36,6 +37,7 @@ export default function Hero() {
     const { playHover, playClick } = useSound();
     const containerRef = useRef<HTMLDivElement>(null);
     const [contactOpen, setContactOpen] = useState(false);
+    const [resumeOpen, setResumeOpen] = useState(false);
 
     const { scrollY } = useScroll();
     const opacity = useTransform(scrollY, [0, 800], [1, 0]);
@@ -201,11 +203,11 @@ export default function Hero() {
                         </Magnetic>
 
                         <Magnetic>
-                            <a
-                                href="https://drive.google.com/file/d/1VTweF1hGUIltWGFodW5uZwyAQNDxF1UF/view?usp=sharing"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={playClick}
+                            <button
+                                onClick={() => {
+                                    playClick();
+                                    setResumeOpen(true);
+                                }}
                                 onMouseEnter={playHover}
                                 className="w-fit group relative flex h-12 xl:h-16 cursor-pointer items-center justify-center px-6 xl:px-10 text-muted-foreground transition-all duration-500 hover:text-foreground hover:bg-secondary/15 rounded-full border border-border sm:border-transparent hover:border-border/30 backdrop-blur-sm"
                             >
@@ -213,7 +215,7 @@ export default function Hero() {
                                     <FileText className="w-3.5 xl:w-5 h-3.5 xl:h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
                                     {dict.resume}
                                 </span>
-                            </a>
+                            </button>
                         </Magnetic>
                     </div>
                 </div>
@@ -221,6 +223,7 @@ export default function Hero() {
             </motion.div>
 
             <ContactModal open={contactOpen} onOpenChange={setContactOpen} />
+            <ResumeModal open={resumeOpen} onOpenChange={setResumeOpen} />
         </section>
     );
 }
