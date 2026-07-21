@@ -66,14 +66,6 @@
         "icon": "/stack/nodejs.svg"
       },
       {
-        "name": "PHP",
-        "icon": "/stack/php.svg"
-      },
-      {
-        "name": "C#",
-        "icon": "/stack/csharp.svg"
-      },
-      {
         "name": "Python",
         "icon": "/stack/python.svg"
       }
