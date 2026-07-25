@@ -571,9 +571,9 @@ export default function Contact() {
                 {/* ─── Footer ─── */}
                 <div className="w-full flex flex-col md:flex-row items-center justify-between pb-12 xl:py-12 xl:border-t border-border/50 gap-8">
                     <div className="text-sm font-mono tracking-widest text-muted-foreground uppercase flex items-center gap-4 max-xl:hidden">
-                        <span>© 2026</span>
+                        <span>2026</span>
                         <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
-                        <span>ABHISHEK. {dict.allRightsReserved}</span>
+                        <span>ABHISHEK.</span>
                     </div>
 
                     <div className="flex flex-wrap items-center justify-center gap-4">
