@@ -86,31 +86,8 @@ export function ProjectModal({ open, onOpenChange, project }: ProjectModalProps)
                     </div>
 
                     <div className="p-6 sm:p-10 flex flex-col gap-10">
-                        <div>
-                            <h3 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">{dict.aboutProject}</h3>
-                            <p className="text-lg text-foreground/80 leading-relaxed font-light">
-                                {project.description}
-                            </p>
-                        </div>
-
-                        {project.stack && project.stack.length > 0 && (
-                            <div>
-                                <h3 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">{dict.technologies}</h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.stack.map((tech) => (
-                                        <span
-                                            key={tech}
-                                            className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/50 text-sm"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
                         {(project.demo || project.repo) && (
-                            <div className="flex flex-wrap gap-4 pt-4 border-t border-border/50">
+                            <div className="flex flex-wrap gap-4 pb-4 border-b border-border/50">
                                 {project.demo && (
                                     <ShineButton
                                         href={project.demo}
@@ -139,6 +116,28 @@ export function ProjectModal({ open, onOpenChange, project }: ProjectModalProps)
                             </div>
                         )}
 
+                        <div>
+                            <h3 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">{dict.aboutProject}</h3>
+                            <p className="text-lg text-foreground/80 leading-relaxed font-light">
+                                {project.description}
+                            </p>
+                        </div>
+
+                        {project.stack && project.stack.length > 0 && (
+                            <div>
+                                <h3 className="text-sm tracking-widest text-muted-foreground uppercase mb-4">{dict.technologies}</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.stack.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="px-4 py-1.5 rounded-full border border-border/50 bg-secondary/50 text-sm"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
 
