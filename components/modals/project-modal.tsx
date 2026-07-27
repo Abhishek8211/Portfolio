@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { useLenisModal } from "@/hooks/use-lenis-modal";
+import { useModalHistory } from "@/hooks/use-modal-history";
 import { useLanguage } from "@/providers/language-provider";
 import { ExternalLink, ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -30,6 +31,7 @@ interface ProjectModalProps {
 
 export function ProjectModal({ open, onOpenChange, project }: ProjectModalProps) {
     useLenisModal(open);
+    useModalHistory(open, onOpenChange, `project-${project?.id ?? 'details'}`);
     const { dict } = useLanguage();
 
     if (!project) return null;

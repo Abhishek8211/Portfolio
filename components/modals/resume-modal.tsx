@@ -4,6 +4,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { useLenisModal } from "@/hooks/use-lenis-modal";
+import { useModalHistory } from "@/hooks/use-modal-history";
 import Magnetic from "@/components/effects/magnetic";
 import { Download } from "lucide-react";
 
@@ -14,6 +15,7 @@ interface ResumeModalProps {
 
 export function ResumeModal({ open, onOpenChange }: ResumeModalProps) {
     useLenisModal(open);
+    useModalHistory(open, onOpenChange, "resume");
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>

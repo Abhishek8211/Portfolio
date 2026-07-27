@@ -11,12 +11,15 @@ import { useLenis } from "@/providers/smooth-scroll-provider";
 import SoundToggle from "@/components/widgets/sound-toggle";
 import Magnetic from "@/components/effects/magnetic";
 import { useSound } from "@/providers/sound-provider";
+import { useModalHistory } from "@/hooks/use-modal-history";
 
 export default function Navbar() {
   const { dict } = useLanguage();
   const lenis = useLenis();
   const { playHover, playClick } = useSound();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useModalHistory(isMobileMenuOpen, setIsMobileMenuOpen, "mobile-menu");
 
   const [dimensions, setDimensions] = useState({
     screenWidth: 1920,
@@ -81,52 +84,77 @@ export default function Navbar() {
     };
   }, [isMobileMenuOpen, lenis]);
 
-  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace("#", "");
+  const scrollTarget = useCallback((targetId: string) => {
     const elem = document.getElementById(targetId);
 
     if (elem || targetId === "home") {
-      setIsMobileMenuOpen(false);
+      let navbarHeight = 80;
+      if (headerRef.current) {
+        const currentHeight = headerRef.current.offsetHeight;
+        const currentScroll = window.scrollY;
+        const currentPy = currentScroll >= dimensions.scrollHeight
+          ? 12
+          : 24 - (currentScroll / dimensions.scrollHeight) * 12;
+        const heightDifference = (currentPy - 12) * 2;
+        navbarHeight = Math.max(currentHeight - heightDifference, 0);
+      }
 
-      setTimeout(() => {
-        let navbarHeight = 80;
-        if (headerRef.current) {
-          const currentHeight = headerRef.current.offsetHeight;
-          const currentScroll = window.scrollY;
-          const currentPy = currentScroll >= dimensions.scrollHeight
-            ? 12
-            : 24 - (currentScroll / dimensions.scrollHeight) * 12;
-          const heightDifference = (currentPy - 12) * 2;
-          navbarHeight = Math.max(currentHeight - heightDifference, 0);
-        }
+      const isDesktop = dimensions.screenWidth >= 1280;
+      const isAboutOnDesktop = targetId === "about" && isDesktop;
 
-        const isDesktop = dimensions.screenWidth >= 1280;
-        const isAboutOnDesktop = targetId === "about" && isDesktop;
+      // For contact, we use a custom offset to make it sit slightly higher (scroll further down).
+      const offset = targetId === "home" ? 0 : targetId === "contact" ? 160 : -navbarHeight;
 
-        // For contact, we use a custom offset to make it sit slightly higher (scroll further down).
-        const offset = targetId === "home" ? 0 : targetId === "contact" ? 160 : -navbarHeight;
-
-        if (lenis) {
-          lenis.scrollTo(targetId === "home" ? 0 : elem!, {
-            offset: isAboutOnDesktop ? 0 : offset,
-            duration: 1.5,
+      if (lenis) {
+        lenis.scrollTo(targetId === "home" ? 0 : elem!, {
+          offset: isAboutOnDesktop ? 0 : offset,
+          duration: 1.5,
+        });
+      } else {
+        if (targetId === "home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else if (elem) {
+          const rect = elem.getBoundingClientRect();
+          const offsetPosition = rect.top + window.scrollY + (isAboutOnDesktop ? 0 : offset);
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
           });
-        } else {
-          if (targetId === "home") {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          } else if (elem) {
-            const rect = elem.getBoundingClientRect();
-            const offsetPosition = rect.top + window.scrollY + (isAboutOnDesktop ? 0 : offset);
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth",
-            });
-          }
         }
-      }, 100);
+      }
     }
   }, [lenis, dimensions.scrollHeight, dimensions.screenWidth]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handlePopState = () => {
+      const hash = window.location.hash.replace("#", "") || "home";
+      scrollTarget(hash);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [scrollTarget]);
+
+  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+
+    if (typeof window !== "undefined") {
+      const newHash = targetId === "home" ? "" : `#${targetId}`;
+      const targetUrl = newHash ? newHash : window.location.pathname + window.location.search;
+      if (window.location.hash !== (newHash || "")) {
+        window.history.pushState({ section: targetId }, "", targetUrl);
+      }
+    }
+
+    setIsMobileMenuOpen(false);
+
+    setTimeout(() => {
+      scrollTarget(targetId);
+    }, 100);
+  }, [scrollTarget]);
 
   return (
     <motion.header

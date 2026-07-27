@@ -7,6 +7,7 @@ import {
 
 import { useLanguage } from "@/providers/language-provider";
 import { useLenisModal } from "@/hooks/use-lenis-modal";
+import { useModalHistory } from "@/hooks/use-modal-history";
 
 interface AboutModalProps {
     open: boolean;
@@ -16,6 +17,7 @@ interface AboutModalProps {
 export function AboutModal({ open, onOpenChange }: AboutModalProps) {
     const { content, dict } = useLanguage();
     useLenisModal(open);
+    useModalHistory(open, onOpenChange, "about");
 
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>

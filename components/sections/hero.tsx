@@ -47,6 +47,11 @@ export default function Hero() {
     const filter = useMotionTemplate`blur(${blurValue}px)`;
 
     const scrollToProjects = useCallback(() => {
+        if (typeof window !== "undefined") {
+            if (window.location.hash !== "#projects") {
+                window.history.pushState({ section: "projects" }, "", "#projects");
+            }
+        }
         const projectsSection = document.getElementById("projects");
         if (projectsSection) {
             projectsSection.scrollIntoView({ behavior: "smooth" });

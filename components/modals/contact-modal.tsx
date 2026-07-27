@@ -10,6 +10,7 @@ import {
 import { useLanguage } from "@/providers/language-provider";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { useLenisModal } from "@/hooks/use-lenis-modal";
+import { useModalHistory } from "@/hooks/use-modal-history";
 import { useLenis } from "@/providers/smooth-scroll-provider";
 import { ShineButton } from "@/components/ui/shine-button";
 import Magnetic from "@/components/effects/magnetic";
@@ -24,6 +25,7 @@ interface ContactModalProps {
 export function ContactModal({ open, onOpenChange }: ContactModalProps) {
     const { content, dict } = useLanguage();
     useLenisModal(open);
+    useModalHistory(open, onOpenChange, "contact-modal");
     const lenis = useLenis();
     const { playClick } = useSound();
 
@@ -32,6 +34,11 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
         onOpenChange(false);
 
         setTimeout(() => {
+            if (typeof window !== "undefined") {
+                if (window.location.hash !== "#contact") {
+                    window.history.pushState({ section: "contact" }, "", "#contact");
+                }
+            }
             const elem = document.getElementById("contact");
             if (elem) {
                 if (lenis) {
