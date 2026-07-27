@@ -192,7 +192,7 @@ export default function Projects() {
 
 const ProjectCard = React.memo(function ProjectCard({ project, onClick }: { project: ProjectItem; onClick?: () => void }) {
     const { playHover, playClick } = useSound();
-    
+
     return (
         <BlurReveal>
             <Magnetic intensity={0.05}>
@@ -203,39 +203,39 @@ const ProjectCard = React.memo(function ProjectCard({ project, onClick }: { proj
                     }}
                     className="group relative w-full xl:w-[45vw] aspect-[4/3] shrink-0 xl:mx-6 perspective-1000 cursor-pointer"
                 >
-                <div className="absolute inset-0 overflow-hidden rounded-2xl bg-muted border border-border/50 transition-all duration-700 ease-out group-hover:border-foreground/20">
-                    <div className="absolute inset-0 z-0">
-                        <Image
-                            src={project.image}
-                            alt={project.title}
-                            fill
-                            sizes="(max-width: 1280px) 100vw, 45vw"
-                            loading="lazy"
-                            className="object-contain opacity-60 max-md:opacity-100 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 grayscale max-md:grayscale-0 group-hover:grayscale-0"
-                        />
-                        <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
-                    </div>
-
-                    <div className="absolute inset-0 z-10 flex flex-col justify-between p-6 xl:p-12">
-                        <div className="flex justify-between items-start">
-                            <div className="overflow-hidden">
-                                <span className="block text-xs xl:text-sm font-mono tracking-widest text-muted-foreground uppercase transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                                    {project.category}
-                                </span>
-                            </div>
-                            <div className="overflow-hidden">
-                                <span className="block text-xs xl:text-sm font-mono text-muted-foreground transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-200">
-                                    {project.year}
-                                </span>
-                            </div>
+                    <div className="absolute inset-0 overflow-hidden rounded-2xl bg-muted border border-border/50 transition-all duration-700 ease-out group-hover:border-foreground/20">
+                        <div className="absolute inset-0 z-0">
+                            <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                sizes="(max-width: 1280px) 100vw, 45vw"
+                                loading="lazy"
+                                className="object-contain opacity-60 max-md:opacity-100 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 grayscale max-md:grayscale-0 group-hover:grayscale-0"
+                            />
+                            <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
                         </div>
 
-                        <h3 className="absolute bottom-6 md:bottom-8 2xl:bottom-12 left-6 md:left-8 2xl:left-12 text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-tighter uppercase text-foreground opacity-10 group-hover:opacity-100 transition-opacity duration-500 delay-100 pointer-events-none">
-                            {project.title}
-                        </h3>
-                    </div>
+                        <div className="absolute inset-0 z-10 flex flex-col justify-between p-6 xl:p-12">
+                            <div className="flex justify-between items-start">
+                                <div className="overflow-hidden">
+                                    <span className="block text-xs xl:text-sm font-mono tracking-widest text-muted-foreground uppercase transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                                        {project.category}
+                                    </span>
+                                </div>
+                                <div className="overflow-hidden">
+                                    <span className="block text-xs xl:text-sm font-mono text-muted-foreground transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 delay-200">
+                                        {project.year}
+                                    </span>
+                                </div>
+                            </div>
 
-                </div>
+                            <h3 className="absolute bottom-6 md:bottom-8 2xl:bottom-12 left-6 md:left-8 2xl:left-12 text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-black tracking-tighter uppercase text-foreground opacity-10 group-hover:opacity-100 transition-opacity duration-500 delay-100 pointer-events-none">
+                                {project.title}
+                            </h3>
+                        </div>
+
+                    </div>
                 </div>
             </Magnetic>
         </BlurReveal>

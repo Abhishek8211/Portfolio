@@ -31,7 +31,7 @@ export default function Magnetic({ children, intensity = 0.4, disabled = false }
         if (rect) {
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
-            
+
             const distanceX = clientX - centerX;
             const distanceY = clientY - centerY;
 

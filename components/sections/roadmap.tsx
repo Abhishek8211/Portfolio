@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { BlurReveal } from "@/components/effects/blur-reveal";
@@ -84,7 +84,7 @@ export default function Roadmap() {
     );
 }
 
-const TimelineNode = ({ item, isEven }: { item: RoadmapItem, isEven: boolean }) => {
+const TimelineNode = React.memo(function TimelineNode({ item, isEven }: { item: RoadmapItem, isEven: boolean }) {
     return (
         <div className={cn("relative flex items-center justify-between w-full", isEven ? "flex-row" : "flex-row-reverse")}>
 
@@ -146,5 +146,5 @@ const TimelineNode = ({ item, isEven }: { item: RoadmapItem, isEven: boolean }) 
                 </BlurReveal>
             </div>
         </div>
-    )
-}
+    );
+});

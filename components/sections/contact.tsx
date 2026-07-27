@@ -195,9 +195,8 @@ function FloatingInput({
             )}
             <label
                 htmlFor={id}
-                className={`absolute left-4 top-2 text-[10px] font-mono tracking-widest uppercase transition-all duration-300 pointer-events-none ${
-                    error ? "text-red-500" : "text-muted-foreground peer-focus:text-foreground"
-                }`}
+                className={`absolute left-4 top-2 text-[10px] font-mono tracking-widest uppercase transition-all duration-300 pointer-events-none ${error ? "text-red-500" : "text-muted-foreground peer-focus:text-foreground"
+                    }`}
             >
                 {label}
             </label>
@@ -365,39 +364,39 @@ export default function Contact() {
                                         className="group flex items-center gap-4 text-left transition-all duration-500 hover:translate-x-1"
                                         aria-label={`Copy email: ${content.contact.email}`}
                                     >
-                                    <div className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center bg-background shrink-0 transition-all duration-500 group-hover:bg-foreground group-hover:border-foreground/30">
-                                        <Mail className="w-4 h-4 text-foreground transition-colors duration-500 group-hover:text-background" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground mb-0.5">
-                                            {dict.sendEmail}
-                                        </span>
-                                        <span className="text-sm font-medium text-foreground flex items-center gap-2">
-                                            {content.contact.email}
-                                            <AnimatePresence mode="wait">
-                                                {copied ? (
-                                                    <motion.span
-                                                        key="copied"
-                                                        initial={{ opacity: 0, scale: 0.8 }}
-                                                        animate={{ opacity: 1, scale: 1 }}
-                                                        exit={{ opacity: 0, scale: 0.8 }}
-                                                        className="text-[10px] font-mono tracking-wider text-green-500 bg-green-500/10 px-2 py-0.5 rounded-full"
-                                                    >
-                                                        {dict.copied}
-                                                    </motion.span>
-                                                ) : (
-                                                    <motion.span
-                                                        key="copy"
-                                                        initial={{ opacity: 0 }}
-                                                        animate={{ opacity: 1 }}
-                                                        exit={{ opacity: 0 }}
-                                                    >
-                                                        <Copy className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                                    </motion.span>
-                                                )}
-                                            </AnimatePresence>
-                                        </span>
-                                    </div>
+                                        <div className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center bg-background shrink-0 transition-all duration-500 group-hover:bg-foreground group-hover:border-foreground/30">
+                                            <Mail className="w-4 h-4 text-foreground transition-colors duration-500 group-hover:text-background" />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground mb-0.5">
+                                                {dict.sendEmail}
+                                            </span>
+                                            <span className="text-sm font-medium text-foreground flex items-center gap-2">
+                                                {content.contact.email}
+                                                <AnimatePresence mode="wait">
+                                                    {copied ? (
+                                                        <motion.span
+                                                            key="copied"
+                                                            initial={{ opacity: 0, scale: 0.8 }}
+                                                            animate={{ opacity: 1, scale: 1 }}
+                                                            exit={{ opacity: 0, scale: 0.8 }}
+                                                            className="text-[10px] font-mono tracking-wider text-green-500 bg-green-500/10 px-2 py-0.5 rounded-full"
+                                                        >
+                                                            {dict.copied}
+                                                        </motion.span>
+                                                    ) : (
+                                                        <motion.span
+                                                            key="copy"
+                                                            initial={{ opacity: 0 }}
+                                                            animate={{ opacity: 1 }}
+                                                            exit={{ opacity: 0 }}
+                                                        >
+                                                            <Copy className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                                        </motion.span>
+                                                    )}
+                                                </AnimatePresence>
+                                            </span>
+                                        </div>
                                     </button>
                                 </Magnetic>
                             </BlurReveal>
@@ -410,17 +409,17 @@ export default function Contact() {
                                         onClick={playClick}
                                         className="group flex items-center gap-4 transition-all duration-500 hover:translate-x-1"
                                     >
-                                    <div className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center bg-background shrink-0 transition-all duration-500 group-hover:bg-foreground group-hover:border-foreground/30">
-                                        <Phone className="w-4 h-4 text-foreground transition-colors duration-500 group-hover:text-background" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground mb-0.5">
-                                            {dict.directLine}
-                                        </span>
-                                        <span className="text-sm font-medium text-foreground">
-                                            {content.contact.phone}
-                                        </span>
-                                    </div>
+                                        <div className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center bg-background shrink-0 transition-all duration-500 group-hover:bg-foreground group-hover:border-foreground/30">
+                                            <Phone className="w-4 h-4 text-foreground transition-colors duration-500 group-hover:text-background" />
+                                        </div>
+                                        <div className="flex flex-col">
+                                            <span className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground mb-0.5">
+                                                {dict.directLine}
+                                            </span>
+                                            <span className="text-sm font-medium text-foreground">
+                                                {content.contact.phone}
+                                            </span>
+                                        </div>
                                     </a>
                                 </Magnetic>
                             </BlurReveal>
@@ -458,20 +457,20 @@ export default function Contact() {
                                                 className="group relative w-11 h-11 rounded-full border border-border/50 flex items-center justify-center bg-background transition-all duration-500 hover:bg-foreground hover:border-foreground/30 hover:shadow-[0_0_20px_rgba(255,255,255,0.08)] hover:rotate-3 hover:scale-110"
                                                 aria-label={link.label}
                                             >
-                                            {IconComponent ? (
-                                                <IconComponent className="w-4 h-4 text-foreground transition-colors duration-500 group-hover:text-background" />
-                                            ) : (
-                                                <span className="text-xs font-bold text-foreground transition-colors duration-500 group-hover:text-background">
-                                                    {link.label[0]}
-                                                </span>
-                                            )}
-                                        </a>
+                                                {IconComponent ? (
+                                                    <IconComponent className="w-4 h-4 text-foreground transition-colors duration-500 group-hover:text-background" />
+                                                ) : (
+                                                    <span className="text-xs font-bold text-foreground transition-colors duration-500 group-hover:text-background">
+                                                        {link.label[0]}
+                                                    </span>
+                                                )}
+                                            </a>
                                         </Magnetic>
                                     );
                                 })}
                             </div>
                         </BlurReveal>
-                        
+
                         {/* ─── Mobile Scroll Indicator ─── */}
                         <div className="lg:hidden flex flex-col items-center justify-center gap-4 -mt-16 pb-4 text-muted-foreground w-full">
                             <div className="w-px h-12 bg-border relative overflow-hidden">
@@ -561,7 +560,7 @@ export default function Contact() {
                                                 </>
                                             )}
                                         </span>
-                                        </button>
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -580,23 +579,23 @@ export default function Contact() {
                         {content.social.map((link: { label: string; href: string }) => {
                             const IconComponent = getSocialIcon(link.label);
                             return (
-                            <BlurReveal key={link.label}>
-                                <Magnetic intensity={0.2}>
-                                    <div onClick={playClick}>
-                                        <ShineButton
-                                            href={link.href}
-                                            className="h-14 px-8"
-                                            shineClassName="w-6 bg-background/20 dark:bg-background/20"
-                                        >
-                                    <span className="relative z-10 flex items-center gap-3 text-sm font-medium tracking-widest uppercase">
-                                        {IconComponent && <IconComponent className="w-4 h-4" />}
-                                        {link.label}
-                                        <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                                    </span>
-                                        </ShineButton>
-                                    </div>
-                                </Magnetic>
-                            </BlurReveal>
+                                <BlurReveal key={link.label}>
+                                    <Magnetic intensity={0.2}>
+                                        <div onClick={playClick}>
+                                            <ShineButton
+                                                href={link.href}
+                                                className="h-14 px-8"
+                                                shineClassName="w-6 bg-background/20 dark:bg-background/20"
+                                            >
+                                                <span className="relative z-10 flex items-center gap-3 text-sm font-medium tracking-widest uppercase">
+                                                    {IconComponent && <IconComponent className="w-4 h-4" />}
+                                                    {link.label}
+                                                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                                </span>
+                                            </ShineButton>
+                                        </div>
+                                    </Magnetic>
+                                </BlurReveal>
                             );
                         })}
                     </div>

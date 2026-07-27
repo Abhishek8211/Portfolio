@@ -19,7 +19,7 @@ export function CustomCursor() {
 
     useEffect(() => {
         if (window.matchMedia("(pointer: coarse)").matches) return;
-        
+
         const frameId = requestAnimationFrame(() => {
             setIsEnabled(true);
         });
