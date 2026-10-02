@@ -1,4 +1,5 @@
 import ScrollProgress from "@/components/layout/scroll-progress";
+import BackToTop from "@/components/layout/back-to-top";
 import ManifestoFlow from "@/components/effects/manifesto-flow";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
@@ -11,10 +12,12 @@ import { InteractiveParticles } from "@/components/effects/interactive-particles
 export default function Home() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <ScrollProgress />
+      <BackToTop />
       <InteractiveParticles />
 
-      <main className="bg-background relative">
+      <main id="main-content" tabIndex={-1} className="bg-background relative">
 
         <Hero />
 
