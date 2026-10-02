@@ -92,6 +92,8 @@ export function InteractiveParticles() {
         let cachedRect = canvas.getBoundingClientRect();
         let cachedDpr = window.devicePixelRatio || 1;
         let cachedIsDark = document.documentElement.classList.contains('dark');
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const finePointer = window.matchMedia("(pointer: fine)");
 
         const themeObserver = new MutationObserver(() => {
             cachedIsDark = document.documentElement.classList.contains('dark');
@@ -120,7 +122,7 @@ export function InteractiveParticles() {
 
             const logicalArea = logicalWidth * logicalHeight;
             let count = Math.floor(logicalArea / 12000);
-            count = Math.max(20, Math.min(count, 150));
+            count = Math.max(16, Math.min(count, finePointer.matches ? 100 : 42));
 
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle(canvasWidth, canvasHeight, dpr));
@@ -128,7 +130,7 @@ export function InteractiveParticles() {
         };
 
         const startLoop = () => {
-            if (animationFrameId) return;
+            if (animationFrameId || reducedMotion.matches) return;
             animationFrameId = requestAnimationFrame(animate);
         };
 
@@ -179,17 +181,29 @@ export function InteractiveParticles() {
             mouseRef.current.x = -1000;
             mouseRef.current.y = -1000;
         };
+        const handleMotionPreference = () => {
+            if (reducedMotion.matches) stopLoop();
+            else if (isVisible) startLoop();
+        };
+        const handleVisibilityChange = () => {
+            if (document.hidden) stopLoop();
+            else if (isVisible) startLoop();
+        };
 
         window.addEventListener("resize", resizeCanvas);
-        window.addEventListener("mousemove", handleMouseMove);
+        if (finePointer.matches) window.addEventListener("mousemove", handleMouseMove);
         window.addEventListener("mouseleave", handleMouseLeave);
+        reducedMotion.addEventListener("change", handleMotionPreference);
+        document.addEventListener("visibilitychange", handleVisibilityChange);
 
         resizeCanvas();
 
         return () => {
             window.removeEventListener("resize", resizeCanvas);
-            window.removeEventListener("mousemove", handleMouseMove);
+            if (finePointer.matches) window.removeEventListener("mousemove", handleMouseMove);
             window.removeEventListener("mouseleave", handleMouseLeave);
+            reducedMotion.removeEventListener("change", handleMotionPreference);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
             stopLoop();
             visibilityObserver.disconnect();
             themeObserver.disconnect();
