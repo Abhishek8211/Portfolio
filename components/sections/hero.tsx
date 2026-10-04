@@ -7,7 +7,6 @@ import { useLanguage } from "@/providers/language-provider";
 import { ArrowRight, Mouse, FileText } from "lucide-react";
 import { ContactModal } from "@/components/modals/contact-modal";
 import { ResumeModal } from "@/components/modals/resume-modal";
-import { InteractiveParticles } from "@/components/effects/interactive-particles";
 import Magnetic from "@/components/effects/magnetic";
 import { useSound } from "@/providers/sound-provider";
 
@@ -86,7 +85,7 @@ export default function Hero() {
                                     alt="Portrait"
                                     fill
                                     sizes="(max-width: 768px) 0px, (max-width: 1280px) 20vw, 12vw"
-                                    priority
+                                    priority={idx < 2}
                                     className="object-cover object-center grayscale contrast-[1.08] brightness-[0.8]"
                                 />
                             </div>
@@ -111,7 +110,7 @@ export default function Hero() {
                                     alt="Portrait"
                                     fill
                                     sizes="(max-width: 640px) 45vw, (max-width: 1280px) 20vw, 12vw"
-                                    priority
+                                    priority={idx < 2}
                                     className="object-cover object-center grayscale contrast-[1.08] brightness-[0.8]"
                                 />
                             </div>
@@ -124,7 +123,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div
-                style={{ opacity, scale, y }}
+                style={{ opacity, scale, y, filter }}
                 className="relative z-20 flex-1 flex flex-col gap-4 lg:gap-6 sm:gap-6 xl:gap-12 justify-start lg:justify-end w-full h-full will-change-[opacity,transform]"
             >
 
