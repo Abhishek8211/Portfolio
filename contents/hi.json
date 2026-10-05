@@ -18,8 +18,8 @@
             "title": "Energy Calculator Chatbot",
             "category": "एआई सहायक",
             "year": "2026",
-            "description": "AI Energy Calculator est une application web intelligente qui aide les utilisateurs à estimer la consommation énergétique de leur foyer en renseignant simplement les caractéristiques de leurs appareils électriques. Elle calcule la consommation rapidement, avec précision, grâce à une interface conversationnelle intuitive.\n\nPropulsée par des technologies web modernes et un chatbot basé sur l'IA, elle analyse la puissance, la durée d'utilisation quotidienne et la quantité des appareils afin d'estimer la consommation d'électricité dans différents pays. L'application fournit des informations claires pour mieux comprendre et optimiser la consommation d'énergie.",
-            "image": "/projects/energychatbot.png",
+            "description": "एक AI चैटबॉट जो उपकरणों की पावर, संख्या और दैनिक उपयोग के आधार पर घर की ऊर्जा खपत का अनुमान लगाता है। यह तेज़ परिणाम और बिजली का उपयोग कम करने के लिए आसान सुझाव देता है।",
+            "image": "/projects/EnergyIQ.png",
             "demo": "https://chat-bot-psi-nine.vercel.app/",
             "repo": "https://github.com/Abhishek8211/Energy-Calculator-ChatBot.git",
             "stack": [
@@ -34,8 +34,8 @@
             "title": "WordGame",
             "category": "गेम",
             "year": "2025",
-            "description": "WordGame est un jeu multijoueur en temps réel où les joueurs placent stratégiquement des lettres sur une grille commune afin de former des mots anglais valides. Chaque mot correctement formé rapporte des points et encourage la créativité ainsi qu'une réflexion stratégique.\n\nDéveloppé avec des technologies web modernes et une communication en temps réel, le jeu offre une expérience fluide avec des scores en direct, des tours chronométrés et un gameplay interactif. Il combine stratégie, vocabulaire et rapidité de décision pour offrir une expérience amusante et compétitive.",
-            "image": "/projects/wordgame.png",
+            "description": "एक रियल-टाइम मल्टीप्लेयर शब्द गेम। खिलाड़ी साझा बोर्ड पर सही शब्द बनाते हैं और टाइम्ड राउंड, लाइव स्कोर तथा तेज़ सोच के साथ प्रतिस्पर्धा करते हैं।",
+            "image": "/projects/Wordgame.png",
             "demo": "https://wordgame-rho-ten.vercel.app/",
             "repo": "https://github.com/Abhishek8211/WordGame.git",
             "stack": [
@@ -51,13 +51,43 @@
             "title": "HandwritingAI",
             "category": "वेब एप्लिकेशन",
             "year": "2025",
-            "description": "HandwritingAI est une application web alimentée par l'IA qui transforme du texte saisi en notes manuscrites réalistes en quelques secondes. Conçue pour les étudiants, les enseignants et les professionnels, elle génère une écriture naturelle avec des styles, des papiers et des options de mise en page personnalisables.\n\nGrâce à des technologies d'IA modernes et une interface intuitive, elle propose plus de 13 styles d'écriture, plusieurs types de papier, un niveau de désordre ajustable, l'annotation de schémas ainsi qu'une exportation PDF et PNG de haute qualité.",
-            "image": "/projects/hand.png",
+            "description": "एक AI टूल जो टाइप किए गए टेक्स्ट को असाइनमेंट और दस्तावेज़ों के लिए वास्तविक हस्तलिखित नोट्स में बदलता है। उपयोगकर्ता स्टाइल और पेपर चुनकर परिणाम को PDF या PNG में डाउनलोड कर सकते हैं।",
+            "image": "/projects/HandwritingAI.png",
             "repo": "https://github.com/Abhishek8211/HandwrittenAI.git",
             "stack": [
                 "React",
                 "TailwindCSS",
                 "Vite"
+            ]
+        },
+        {
+            "id": "4",
+            "title": "Rajamantri",
+            "category": "मल्टीप्लेयर गेम",
+            "year": "2026",
+            "description": "एक रियल-टाइम मल्टीप्लेयर डिडक्शन गेम जिसमें खिलाड़ी छिपी भूमिकाएं निभाते हैं, ब्लफ करते हैं और राजा को खोजने के लिए रणनीति बनाते हैं। इसमें प्राइवेट रूम, लाइव चैट, रोल रिवील और कस्टम राउंड शामिल हैं।",
+            "image": "/projects/Rajamantri.png",
+            "demo": "https://rajamantri-web.vercel.app/",
+            "repo": "https://github.com/Abhishek8211/Rajamantri.git",
+            "stack": [
+                "React",
+                "Node.js",
+                "Socket.io",
+                "Tailwind CSS"
+            ]
+        },
+        {
+            "id": "5",
+            "title": "MessMate",
+            "category": "मोबाइल एप्लिकेशन",
+            "year": "2026",
+            "description": "एक मित्र के साथ बनाया गया मोबाइल मेस मैनेजमेंट ऐप, जो छात्रों, एडमिन और मेस स्टाफ को जोड़ता है। इसमें मेन्यू, वोटिंग, उपस्थिति, रेटिंग, भोजन की बर्बादी और बेहतर कैंपस प्रबंधन के लिए रोल-आधारित डैशबोर्ड शामिल हैं।",
+            "image": "/projects/MessMate.png",
+            "stack": [
+                "React Native",
+                "Expo",
+                "Node.js",
+                "MongoDB"
             ]
         }
     ],
