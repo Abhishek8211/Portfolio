@@ -35,7 +35,7 @@
             "category": "गेम",
             "year": "2025",
             "description": "Un jeu de mots multijoueur en temps réel. Les joueurs forment des mots valides sur une grille commune et s'affrontent avec des tours, des scores en direct et des manches basées sur la stratégie et la rapidité.",
-            "image": "/projects/Wordgame.png",
+            "image": "/projects/wordgame.png",
             "demo": "https://wordgame-rho-ten.vercel.app/",
             "repo": "https://github.com/Abhishek8211/WordGame.git",
             "stack": [

@@ -35,7 +35,7 @@
             "category": "Game",
             "year": "2025",
             "description": "A real-time multiplayer word game where players place letters on a shared board to create valid words. Timed turns, live scores, and competitive rounds make every match a test of vocabulary, strategy, and quick decisions.",
-            "image": "/projects/Wordgame.png",
+            "image": "/projects/wordgame.png",
             "demo": "https://wordgame-rho-ten.vercel.app/",
             "repo": "https://github.com/Abhishek8211/WordGame.git",
             "stack": [

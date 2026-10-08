@@ -35,7 +35,7 @@
             "category": "गेम",
             "year": "2025",
             "description": "एक रियल-टाइम मल्टीप्लेयर शब्द गेम। खिलाड़ी साझा बोर्ड पर सही शब्द बनाते हैं और टाइम्ड राउंड, लाइव स्कोर तथा तेज़ सोच के साथ प्रतिस्पर्धा करते हैं।",
-            "image": "/projects/Wordgame.png",
+            "image": "/projects/wordgame.png",
             "demo": "https://wordgame-rho-ten.vercel.app/",
             "repo": "https://github.com/Abhishek8211/WordGame.git",
             "stack": [

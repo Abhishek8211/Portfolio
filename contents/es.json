@@ -35,7 +35,7 @@
             "category": "Juego",
             "year": "2025",
             "description": "Un juego de palabras multijugador en tiempo real. Los jugadores forman palabras válidas en un tablero compartido y compiten con turnos, puntuaciones en vivo y rondas que ponen a prueba su vocabulario y rapidez.",
-            "image": "/projects/Wordgame.png",
+            "image": "/projects/wordgame.png",
             "demo": "https://wordgame-rho-ten.vercel.app/",
             "repo": "https://github.com/Abhishek8211/WordGame.git",
             "stack": [
