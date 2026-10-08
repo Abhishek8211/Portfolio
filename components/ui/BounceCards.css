@@ -1,0 +1,74 @@
+.bounce-cards-container {
+  position: relative;
+  display: flex;
+  width: var(--bounce-width);
+  height: var(--bounce-height);
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.bounce-card {
+  position: absolute;
+  width: clamp(175px, 20vw, 230px);
+  aspect-ratio: 1.38 / 1;
+  padding: 7px;
+  border: 1px solid color-mix(in srgb, var(--foreground) 24%, transparent);
+  border-radius: 14px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--background) 88%, var(--primary));
+  box-shadow: 0 18px 40px color-mix(in srgb, var(--background) 55%, transparent);
+  cursor: pointer;
+  opacity: 0;
+  transition: box-shadow 250ms ease, border-color 250ms ease, filter 250ms ease;
+}
+
+.bounce-card:hover,
+.bounce-card:focus-visible {
+  z-index: 10;
+  border-color: color-mix(in srgb, var(--primary) 75%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 18%, transparent), 0 20px 55px color-mix(in srgb, var(--primary) 28%, transparent);
+  filter: brightness(1.06);
+  outline: none;
+}
+
+.bounce-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  background: var(--background);
+}
+
+@media (max-width: 639px) {
+  .bounce-cards-container {
+    width: 100%;
+    height: 280px;
+  }
+
+  .bounce-card {
+    width: min(43vw, 165px);
+    padding: 5px;
+  }
+
+  .bounce-card.card-0 {
+    transform: rotate(8deg) translate(-108px) !important;
+  }
+
+  .bounce-card.card-1 {
+    transform: rotate(4deg) translate(-54px) !important;
+  }
+
+  .bounce-card.card-2 {
+    transform: rotate(-2deg) !important;
+  }
+
+  .bounce-card.card-3 {
+    transform: rotate(-6deg) translate(54px) !important;
+  }
+
+  .bounce-card.card-4 {
+    transform: rotate(4deg) translate(108px) !important;
+  }
+}

@@ -5,6 +5,7 @@ import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
 import Stack from "@/components/sections/stack";
 import Projects from "@/components/sections/projects";
+import Certificates from "@/components/sections/certificates";
 import Roadmap from "@/components/sections/roadmap";
 import Contact from "@/components/sections/contact";
 import { InteractiveParticles } from "@/components/effects/interactive-particles";
@@ -40,6 +41,12 @@ export default function Home() {
           </section>
 
           <ManifestoFlow />
+
+          <section id="certificates">
+            <Certificates />
+          </section>
+
+          <ManifestoFlow variant="certificates" />
 
           <section id="roadmap">
             <Roadmap />

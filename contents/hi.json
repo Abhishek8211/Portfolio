@@ -12,6 +12,14 @@
         "प्रदर्शन सर्वोपरि",
         "सीखना कभी न रोकें"
     ],
+    "manifestoCertificates": [
+        "विचारों को उत्पादों में बदलें",
+        "बनाते हुए सीखें",
+        "लोगों के लिए डिज़ाइन करें",
+        "जटिलता को सरल बनाएं",
+        "विश्वास के साथ लॉन्च करें",
+        "जिज्ञासु बने रहें"
+    ],
     "projects": [
         {
             "id": "1",
@@ -89,6 +97,48 @@
                 "Node.js",
                 "MongoDB"
             ]
+        }
+    ],
+    "certificates": [
+        {
+            "id": "1",
+            "title": "AI Oracle",
+            "issuer": "AI Oracle",
+            "year": "2025",
+            "description": "कृत्रिम बुद्धिमत्ता के व्यावहारिक सीखने के अनुभव में भागीदारी और उपलब्धि का प्रमाणपत्र।",
+            "image": "/certificates/AI Oracle.png"
+        },
+        {
+            "id": "2",
+            "title": "Google Ambassador",
+            "issuer": "Google",
+            "year": "2025",
+            "description": "Google की सीखने की पहलों का प्रतिनिधित्व करने और तकनीकी संसाधनों से विद्यार्थियों को जोड़ने की मान्यता।",
+            "image": "/certificates/googleambassador.jpg"
+        },
+        {
+            "id": "3",
+            "title": "Hack2skill Certificate",
+            "issuer": "Hack2skill",
+            "year": "2025",
+            "description": "Hack2skill के सीखने और नवाचार कार्यक्रम के माध्यम से अर्जित प्रमाणपत्र।",
+            "image": "/certificates/Hack2skill-Certificate.png"
+        },
+        {
+            "id": "4",
+            "title": "React JS Certificate",
+            "issuer": "React JS",
+            "year": "2025",
+            "description": "React JS प्रशिक्षण और component-based frontend development पूरा करने का प्रमाणपत्र।",
+            "image": "/certificates/REACT JS CERTIFICATE.jpeg"
+        },
+        {
+            "id": "5",
+            "title": "Achievement Certificate",
+            "issuer": "Learning & Development",
+            "year": "2025",
+            "description": "लगातार प्रयास, भागीदारी और तकनीकी विकास की यात्रा का प्रमाणपत्र।",
+            "image": "/certificates/Screenshot 2025-04-15 145145.png"
         }
     ],
     "roadmap": [

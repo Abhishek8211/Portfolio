@@ -12,6 +12,14 @@
         "PERFORMANCE FIRST",
         "NEVER STOP IMPROVING"
   ],
+    "manifestoCertificates": [
+        "TURN IDEAS INTO PRODUCTS",
+        "LEARN BY BUILDING",
+        "DESIGN FOR HUMANS",
+        "MAKE COMPLEXITY SIMPLE",
+        "SHIP WITH CONFIDENCE",
+        "STAY CURIOUS"
+    ],
     "projects": [
         {
             "id": "1",
@@ -89,6 +97,48 @@
                 "Node.js",
                 "MongoDB"
             ]
+        }
+    ],
+    "certificates": [
+        {
+            "id": "1",
+            "title": "AI Oracle",
+            "issuer": "AI Oracle",
+            "year": "2025",
+            "description": "Certificate recognizing participation and achievement in an applied artificial intelligence learning experience.",
+            "image": "/certificates/AI Oracle.png"
+        },
+        {
+            "id": "2",
+            "title": "Google Ambassador",
+            "issuer": "Google",
+            "year": "2025",
+            "description": "Recognition for representing Google learning initiatives and helping connect learners with technology and developer resources.",
+            "image": "/certificates/googleambassador.jpg"
+        },
+        {
+            "id": "3",
+            "title": "Hack2skill Certificate",
+            "issuer": "Hack2skill",
+            "year": "2025",
+            "description": "Certificate earned through a Hack2skill learning and innovation program focused on building practical technology skills.",
+            "image": "/certificates/Hack2skill-Certificate.png"
+        },
+        {
+            "id": "4",
+            "title": "React JS Certificate",
+            "issuer": "React JS",
+            "year": "2025",
+            "description": "Certificate recognizing the completion of React JS training and hands-on work with component-based frontend development.",
+            "image": "/certificates/REACT JS CERTIFICATE.jpeg"
+        },
+        {
+            "id": "5",
+            "title": "Achievement Certificate",
+            "issuer": "Learning & Development",
+            "year": "2025",
+            "description": "A milestone certificate from the learning journey, celebrating continued effort, participation, and technical growth.",
+            "image": "/certificates/Screenshot 2025-04-15 145145.png"
         }
     ],
     "roadmap": [

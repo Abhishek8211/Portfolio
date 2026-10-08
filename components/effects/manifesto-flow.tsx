@@ -6,13 +6,21 @@ const Separator = () => (
     <div className="aspect-square h-3 w-3 rounded-full bg-foreground/10 sm:h-4 sm:w-4 md:h-5 md:w-5 xl:h-6 xl:w-6" />
 );
 
-export default function ManifestoFlow({ reverse = false }: { reverse?: boolean }) {
+export default function ManifestoFlow({
+  reverse = false,
+  variant = "default",
+}: {
+  reverse?: boolean;
+  variant?: "default" | "certificates";
+}) {
   const { content } = useLanguage();
 
-  const manifestoItems = content?.manifesto || [];
+  const manifestoItems = variant === "certificates"
+    ? content?.manifestoCertificates || []
+    : content?.manifesto || [];
 
   return (
-    <div className="relative w-full overflow-hidden border-y border-border/50 py-10 select-none pointer-events-none bg-background/50">
+    <div className="relative w-full overflow-hidden border-y border-border/50 py-7 md:py-8 select-none pointer-events-none bg-background/50">
 
       <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
 

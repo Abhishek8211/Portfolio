@@ -12,6 +12,14 @@
         "LA PERFORMANCE AVANT TOUT",
         "NE JAMAIS CESSER DE PROGRESSER"
     ],
+    "manifestoCertificates": [
+        "TRANSFORMER LES IDÉES EN PRODUITS",
+        "APPRENDRE EN CONSTRUISANT",
+        "CONCEVOIR POUR LES HUMAINS",
+        "SIMPLIFIER LA COMPLEXITÉ",
+        "LIVRER AVEC CONFIANCE",
+        "RESTER CURIEUX"
+    ],
     "projects": [
         {
             "id": "1",
@@ -89,6 +97,48 @@
                 "Node.js",
                 "MongoDB"
             ]
+        }
+    ],
+    "certificates": [
+        {
+            "id": "1",
+            "title": "AI Oracle",
+            "issuer": "AI Oracle",
+            "year": "2025",
+            "description": "Certificat reconnaissant la participation et la réussite dans une expérience d'apprentissage appliqué de l'intelligence artificielle.",
+            "image": "/certificates/AI Oracle.png"
+        },
+        {
+            "id": "2",
+            "title": "Google Ambassador",
+            "issuer": "Google",
+            "year": "2025",
+            "description": "Reconnaissance pour représenter les initiatives d'apprentissage de Google et partager des ressources technologiques.",
+            "image": "/certificates/googleambassador.jpg"
+        },
+        {
+            "id": "3",
+            "title": "Hack2skill Certificate",
+            "issuer": "Hack2skill",
+            "year": "2025",
+            "description": "Certificat obtenu dans le cadre d'un programme d'apprentissage et d'innovation Hack2skill.",
+            "image": "/certificates/Hack2skill-Certificate.png"
+        },
+        {
+            "id": "4",
+            "title": "React JS Certificate",
+            "issuer": "React JS",
+            "year": "2025",
+            "description": "Certificat récompensant une formation React JS et la pratique du développement frontend par composants.",
+            "image": "/certificates/REACT JS CERTIFICATE.jpeg"
+        },
+        {
+            "id": "5",
+            "title": "Achievement Certificate",
+            "issuer": "Learning & Development",
+            "year": "2025",
+            "description": "Un certificat marquant les efforts continus, la participation et la progression technique.",
+            "image": "/certificates/Screenshot 2025-04-15 145145.png"
         }
     ],
     "roadmap": [

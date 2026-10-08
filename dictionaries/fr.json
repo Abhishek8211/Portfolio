@@ -4,6 +4,7 @@
         "about": "À propos",
         "stack": "Stack",
         "projects": "Projets",
+        "certificates": "Certificats",
         "roadmap": "Parcours",
         "contact": "Contact"
     },
@@ -11,6 +12,7 @@
         "about": "À propos",
         "stack": "Stack",
         "projects": "Projets",
+        "certificates": "Certificats",
         "roadmap": "Feuille de route",
         "contact": "Contact"
     },
@@ -26,6 +28,11 @@
     "projectsIntro": "Une collection d'*expériences*, de *produits* et d'*artefacts numériques* forgés dans le **vide**.",
     "projectsScrollText": "Faites défiler pour explorer",
     "projectsEndText": "Fin",
+    "certificatesIntro": "Une collection de jalons, de cours et de preuves de tout ce que je continue d'apprendre et de construire.",
+    "certificatesHint": "Touchez un certificat pour l'inspecter",
+    "certificatesCount": "jalons d'apprentissage",
+    "certificateDetails": "Détails sur",
+    "credential": "Identifiant",
     "roadmapDescription": "Un parcours où je partage les expériences acquises tout au long de mon aventure dans le logiciel et les technologies que j'ai apprises.",
     "contactIntroText": "Que l'on parte de zéro pour donner vie à un projet ou que l'on pousse un système existant encore plus loin.",
     "contactHeading": "Construisons Quelque Chose de Grand Ensemble",

@@ -46,6 +46,7 @@ export default function Navbar() {
     { name: dict.nav.about, href: "#about" },
     { name: dict.nav.stack, href: "#stack" },
     { name: dict.nav.projects, href: "#projects" },
+    { name: dict.nav.certificates, href: "#certificates" },
     { name: dict.nav.roadmap, href: "#roadmap" },
     { name: dict.nav.contact, href: "#contact" },
   ], [dict.nav]);
