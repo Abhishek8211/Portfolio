@@ -245,9 +245,9 @@ const ProjectFlipCard = React.memo(function ProjectFlipCard({
                 src={project.image}
                 alt={project.title}
                 fill
-                sizes="(max-width: 1280px) 90vw, 560px"
+                sizes="(max-width: 1280px) 90vw, 640px"
                 priority={index < 2}
-                className="object-cover object-top transition-transform duration-700 ease-out scale-[1.04] group-hover/front:scale-100"
+                className="object-cover object-center transition-transform duration-700 ease-out scale-[1.04] group-hover/front:scale-100"
             />
 
             {/* Layered gradients for depth */}
@@ -458,7 +458,7 @@ const ProjectFlipCard = React.memo(function ProjectFlipCard({
                     perspective={1200}
                     stiffness={160}
                     damping={22}
-                    width={520}
+                    width={640}
                     height={440}
                     radius={18}
                     background="#080a0f"
