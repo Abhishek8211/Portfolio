@@ -27,6 +27,17 @@
   touch-action: pan-x;
 }
 
+.project-flip-card .flip-card {
+  width: min(var(--fc-w), calc(100vw - (var(--container-spacing) * 2)));
+  max-width: 100%;
+}
+
+@media (max-width: 1279px) {
+  .project-flip-card .flip-card {
+    height: min(440px, 115vw);
+  }
+}
+
 .flip-card[data-draggable] {
   cursor: grab;
 }

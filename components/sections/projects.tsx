@@ -380,7 +380,7 @@ const ProjectFlipCard = React.memo(function ProjectFlipCard({
                 </div>
 
                 {/* Scrollable project content */}
-                <div className="min-h-0 flex-1 overflow-hidden pr-1">
+                <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain pr-1">
                     <p className="text-sm text-white/65 leading-relaxed mt-4">
                         {project.description}
                     </p>
@@ -405,7 +405,7 @@ const ProjectFlipCard = React.memo(function ProjectFlipCard({
                 </div>
 
                 {/* Action buttons */}
-                <div className="mt-5 shrink-0 flex items-center gap-2.5">
+                <div className="mt-5 shrink-0 flex flex-wrap items-center gap-2.5">
                     {project.demo && (
                         <a
                             href={project.demo}
@@ -442,7 +442,7 @@ const ProjectFlipCard = React.memo(function ProjectFlipCard({
 
     return (
         <BlurReveal>
-            <div className="shrink-0 xl:mx-5" onMouseEnter={playHover}>
+            <div className="project-flip-card shrink-0 xl:mx-5" onMouseEnter={playHover}>
                 <FlipCard
                     front={frontContent}
                     back={backContent}
