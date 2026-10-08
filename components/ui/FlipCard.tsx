@@ -162,6 +162,7 @@ export default function FlipCard({
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (disabled || e.button !== 0 || grip.current) return;
+    if (e.target instanceof Element && e.target.closest('a, button, input, select, textarea')) return;
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
     } catch {}
