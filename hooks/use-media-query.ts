@@ -11,6 +11,7 @@ export const BREAKPOINTS = {
 export function useMediaQuery(query: string): boolean {
     const subscribe = useCallback(
         (callback: () => void) => {
+            if (typeof window === "undefined") return () => {};
             const media = window.matchMedia(query);
             media.addEventListener("change", callback);
             return () => media.removeEventListener("change", callback);
@@ -18,9 +19,11 @@ export function useMediaQuery(query: string): boolean {
         [query],
     );
 
-    const getSnapshot = () => window.matchMedia(query).matches;
+    // Guard for SSR: window does not exist on the server.
+    const getSnapshot = () =>
+        typeof window !== "undefined" ? window.matchMedia(query).matches : false;
 
     const getServerSnapshot = () => false;
 
     return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-}
+}

@@ -35,9 +35,14 @@ export function AboutModal({ open, onOpenChange }: AboutModalProps) {
                     </DialogHeader>
                 </div>
 
-                <div className="overflow-y-auto px-8 pb-8 pt-2 flex-1" data-lenis-prevent="true">
+                {/* overscroll-contain stops the background page from scrolling when
+                    you reach the top/bottom of the modal on mobile */}
+                <div
+                    className="overflow-y-auto overscroll-contain px-8 pb-8 pt-2 flex-1"
+                    data-lenis-prevent="true"
+                >
                     <div className="flex flex-col gap-6">
-                        <div className="text-sm text-foreground/80 leading-relaxed font-light">
+                        <div className="text-sm text-foreground/80 leading-relaxed font-light whitespace-pre-line">
                             {content.about.full}
                         </div>
                     </div>
@@ -48,3 +53,4 @@ export function AboutModal({ open, onOpenChange }: AboutModalProps) {
         </Dialog>
     );
 }
+

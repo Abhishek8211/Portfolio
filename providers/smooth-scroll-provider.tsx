@@ -22,13 +22,13 @@ export default function SmoothScroll({
       smoothWheel: true,
     });
 
-    const frameId = requestAnimationFrame(() => {
-      setLenis(lenisInstance);
-    });
+    setLenis(lenisInstance);
 
     let rafId: number;
+    let destroyed = false;
 
     function raf(time: number) {
+      if (destroyed) return;
       lenisInstance.raf(time);
       rafId = requestAnimationFrame(raf);
     }
@@ -36,7 +36,7 @@ export default function SmoothScroll({
     rafId = requestAnimationFrame(raf);
 
     return () => {
-      cancelAnimationFrame(frameId);
+      destroyed = true;
       cancelAnimationFrame(rafId);
       lenisInstance.destroy();
       setLenis(null);

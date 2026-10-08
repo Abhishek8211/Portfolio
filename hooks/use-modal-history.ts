@@ -3,9 +3,16 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Hook to manage browser history for modals and drawers on mobile devices.
- * Pushes a history entry when opened, and listens to popstate (back button)
- * so pressing physical/gesture Back closes the modal instead of exiting the site.
+ * Manages browser history for modals so the Android/iOS back gesture
+ * closes the modal — WITHOUT causing scroll-to-top or conflicting with
+ * the Next.js App Router.
+ *
+ * On open  → pushState({modal}) so the back gesture hits the sentinel first.
+ * On popstate (back gesture) → close the modal. Browser already moved back;
+ *   no history.back() needed.
+ * On close via ✕/Escape → replaceState(null) to silently overwrite the
+ *   sentinel. replaceState does NOT fire popstate, so Next.js router is
+ *   never touched and the page does NOT scroll to top.
  */
 export function useModalHistory(
   open: boolean,
@@ -22,10 +29,9 @@ export function useModalHistory(
       }
 
       const handlePopState = () => {
-        if (isPushedRef.current) {
-          isPushedRef.current = false;
-          onOpenChange(false);
-        }
+        // Back gesture: browser already moved back. Just close the modal.
+        isPushedRef.current = false;
+        onOpenChange(false);
       };
 
       window.addEventListener("popstate", handlePopState);
@@ -35,8 +41,13 @@ export function useModalHistory(
     } else {
       if (isPushedRef.current) {
         isPushedRef.current = false;
-        if (typeof window !== "undefined" && window.history.state?.modal === modalId) {
-          window.history.back();
+        // replaceState silently overwrites the sentinel — no popstate fires,
+        // no Next.js router conflict, no scroll-to-top.
+        if (
+          typeof window !== "undefined" &&
+          window.history.state?.modal === modalId
+        ) {
+          window.history.replaceState(null, "");
         }
       }
     }

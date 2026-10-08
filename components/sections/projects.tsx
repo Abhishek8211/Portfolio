@@ -238,7 +238,7 @@ const ProjectFlipCard = React.memo(function ProjectFlipCard({
 
     /* ── Front face ───────────────────────────────────────────────────────── */
     const frontContent = (
-        <div className="relative w-full h-full overflow-hidden group/front">
+        <div className="relative w-full h-full overflow-hidden group/front bg-[#080a0f]">
 
             {/* Full bleed project image */}
             <Image
@@ -331,7 +331,7 @@ const ProjectFlipCard = React.memo(function ProjectFlipCard({
 
     /* ── Back face ────────────────────────────────────────────────────────── */
     const backContent = (
-        <div className="relative flex flex-col h-full overflow-hidden">
+        <div className="relative flex flex-col h-full overflow-hidden bg-[#080a0f]">
 
             {/* Subtle image bleed on back */}
             <div className="absolute inset-0">
