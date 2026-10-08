@@ -28,7 +28,7 @@ export default function Certificates() {
                             </p>
                             <p className="mt-8 text-xs font-mono uppercase tracking-[0.2em] text-primary/80">{dict.certificatesHint}</p>
                         </div>
-                        <div className="flex justify-center lg:justify-end">
+                        <div className="w-full min-w-0 max-w-full flex justify-center lg:justify-end">
                             <BounceCards images={images} containerWidth={600} containerHeight={340} onCardClick={(index) => setSelected(certificates[index] ?? null)} />
                         </div>
                     </div>

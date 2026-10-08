@@ -4,6 +4,8 @@
   width: var(--bounce-width);
   height: var(--bounce-height);
   max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
 }
@@ -41,34 +43,55 @@
   background: var(--background);
 }
 
-@media (max-width: 639px) {
+@media (max-width: 1023px) {
   .bounce-cards-container {
     width: 100%;
-    height: 280px;
+    max-width: 100%;
+    height: auto;
+    min-height: 250px;
+    justify-content: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 1rem max(1rem, calc((100vw - 100% + 1rem) / 2)) 1.5rem;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .bounce-cards-container::-webkit-scrollbar {
+    display: none;
   }
 
   .bounce-card {
-    width: min(43vw, 165px);
+    position: relative;
+    flex: 0 0 min(78vw, 360px);
+    width: min(78vw, 360px);
+    transform: none !important;
     padding: 5px;
+    scroll-snap-align: center;
+    opacity: 1;
   }
 
   .bounce-card.card-0 {
-    transform: rotate(8deg) translate(-108px) !important;
+    margin-left: 0;
   }
 
   .bounce-card.card-1 {
-    transform: rotate(4deg) translate(-54px) !important;
+    margin-left: 0;
   }
 
   .bounce-card.card-2 {
-    transform: rotate(-2deg) !important;
+    margin-left: 0;
   }
 
   .bounce-card.card-3 {
-    transform: rotate(-6deg) translate(54px) !important;
+    margin-left: 0;
   }
 
   .bounce-card.card-4 {
-    transform: rotate(4deg) translate(108px) !important;
+    margin-left: 0;
   }
 }
